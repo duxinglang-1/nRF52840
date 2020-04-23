@@ -1,0 +1,141 @@
+/**********初始化**************/
+{
+  RESET=1;
+  Delay(10);
+  RESET=0; 
+  Delay(10);
+  RESET=1;
+  Delay(120);   //延时120ms      
+        
+Write(Command , 0x11);     //Sleep out
+Delay(120);                //Delay 120ms
+
+Write(Command , 0xB1);     //Normal mode
+Write(Parameter , 0x05);   
+Write(Parameter , 0x3C);   
+Write(Parameter , 0x3C);  
+ 
+Write(Command , 0xB2);     //Idle mode
+Write(Parameter , 0x05);   
+Write(Parameter , 0x3C);   
+Write(Parameter , 0x3C);  
+ 
+Write(Command , 0xB3);     //Partial mode
+Write(Parameter , 0x05);   
+Write(Parameter , 0x3C);   
+Write(Parameter , 0x3C);   
+Write(Parameter , 0x05);   
+Write(Parameter , 0x3C);   
+Write(Parameter , 0x3C);  
+ 
+Write(Command , 0xB4);     //Dot inversion
+Write(Parameter , 0x03); 
+  
+Write(Command , 0xC0);     //AVDD GVDD
+Write(Parameter , 0xAB);   
+Write(Parameter , 0x0B);   
+Write(Parameter , 0x04);  
+ 
+Write(Command , 0xC1);     //VGH VGL
+Write(Parameter , 0xC5);   //C0
+
+Write(Command , 0xC2);     //Normal Mode
+Write(Parameter , 0x0D);   
+Write(Parameter , 0x00);  
+ 
+Write(Command , 0xC3);     //Idle
+Write(Parameter , 0x8D);   
+Write(Parameter , 0x6A);  
+ 
+Write(Command , 0xC4);     //Partial+Full
+Write(Parameter , 0x8D);   
+Write(Parameter , 0xEE); 
+  
+Write(Command , 0xC5);     //VCOM
+Write(Parameter , 0x0F);  
+ 
+Write(Command , 0xE0);     //positive gamma
+Write(Parameter , 0x07);   
+Write(Parameter , 0x0E);   
+Write(Parameter , 0x08);   
+Write(Parameter , 0x07);   
+Write(Parameter , 0x10);   
+Write(Parameter , 0x07);   
+Write(Parameter , 0x02);   
+Write(Parameter , 0x07);   
+Write(Parameter , 0x09);   
+Write(Parameter , 0x0F);   
+Write(Parameter , 0x25);   
+Write(Parameter , 0x36);   
+Write(Parameter , 0x00);   
+Write(Parameter , 0x08);   
+Write(Parameter , 0x04);   
+Write(Parameter , 0x10); 
+  
+Write(Command , 0xE1);     //negative gamma
+Write(Parameter , 0x0A);   
+Write(Parameter , 0x0D);   
+Write(Parameter , 0x08);   
+Write(Parameter , 0x07);   
+Write(Parameter , 0x0F);   
+Write(Parameter , 0x07);   
+Write(Parameter , 0x02);   
+Write(Parameter , 0x07);   
+Write(Parameter , 0x09);   
+Write(Parameter , 0x0F);   
+Write(Parameter , 0x25);   
+Write(Parameter , 0x35);   
+Write(Parameter , 0x00);   
+Write(Parameter , 0x09);   
+Write(Parameter , 0x04);   
+Write(Parameter , 0x10);
+   
+Write (Command  ,0xFC);    
+Write (Parameter  ,0x80);  
+
+Write (Command  ,0xF0);    
+Write (Parameter  ,0x11);  
+
+Write (Command  ,0xD6);    
+Write (Parameter  ,0xCB);  
+  
+Write(Command , 0x3A);     
+Write(Parameter , 0x05);  
+ 
+Write(Command , 0x36);     //BGR
+Write (Parameter  ,0x08);   
+ 
+Write(Command , 0x21);     //Display inversion
+Write(Command , 0x29);     //Display on
+}
+
+/**************显示地址*******************/
+{
+Write(Command , 0x2A);     //Set Column Address
+Write(Parameter , 0x00);   
+Write (Parameter  ,0x1A);  //26  
+Write(Parameter , 0x00);   
+Write (Parameter  ,0x69);   //105 
+Write(Command , 0x2B);     //Set Page Address
+Write(Parameter , 0x00);   
+Write (Parameter  ,0x01);    //1
+Write(Parameter , 0x00);   
+Write (Parameter  ,0xA0);    //160
+Write(Command , 0x2C); 
+}
+
+/**********SLEEP OUT***************/
+
+{		
+	SPI_WriteComm(0x11);  		//Sleep out	
+	Delay(120);                  //延时120ms
+        SPI_WriteComm(0x29);
+}
+
+/**********SLEEP IN***************/
+
+{	
+        SPI_WriteComm(0x28);	
+	SPI_WriteComm(0x10);  		//Sleep in	
+	Delay(120);                  //延时120ms
+}
