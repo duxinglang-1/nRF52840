@@ -1,0 +1,1772 @@
+Dependencies for Project 'test', Target 'IK-52840DK': (DO NOT MODIFY !)
+F (..\..\app\main.c)(0x5E9511E4)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x57F606B6)
+I (..\..\components\libraries\delay\nrf_delay.h)(0x5B937AE5)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\components\boards\boards.h)(0x5B937AE5)
+I (..\..\modules\nrfx\hal\nrf_gpio.h)(0x5B937AEB)
+I (..\..\components\boards\pca10056.h)(0x5B937AE5)
+I (..\..\components\libraries\uart\app_uart.h)(0x5B937AE6)
+I (..\..\modules\nrfx\hal\nrf_uart.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal\nrf_uarte.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal\nrf_nvmc.h)(0x5B937AEB)
+I (..\..\app\lcd\lcd.h)(0x5E941143)
+I (..\..\integration\nrfx\legacy\nrf_drv_timer.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\include\nrfx_timer.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_timer.h)(0x5B937AEB)
+I (..\..\app\datetime\datetime.h)(0x5E93BE7E)
+I (..\..\app\font\font.h)(0x5E941250)
+I (..\..\app\image\img.h)(0x5E941307)
+F (..\config\sdk_config.h)(0x5E8D6FD6)()
+F (..\..\components\boards\boards.c)(0x5B937AE5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\boards.o --omf_browse .\objects\boards.crf --depend .\objects\boards.d)
+I (..\..\components\boards\boards.h)(0x5B937AE5)
+I (..\..\modules\nrfx\hal\nrf_gpio.h)(0x5B937AEB)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\components\boards\pca10056.h)(0x5B937AE5)
+F (..\..\components\libraries\util\app_error.c)(0x5B937AE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\app_error.o --omf_browse .\objects\app_error.crf --depend .\objects\app_error.d)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+F (..\..\components\libraries\fifo\app_fifo.c)(0x5B937AE5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\app_fifo.o --omf_browse .\objects\app_fifo.crf --depend .\objects\app_fifo.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\fifo\app_fifo.h)(0x5B937AE5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+F (..\..\components\libraries\uart\app_uart_fifo.c)(0x5B937AE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\app_uart_fifo.o --omf_browse .\objects\app_uart_fifo.crf --depend .\objects\app_uart_fifo.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\uart\app_uart.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\components\libraries\fifo\app_fifo.h)(0x5B937AE5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\integration\nrfx\legacy\nrf_drv_uart.h)(0x5B937AEB)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\include\nrfx_uarte.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_uarte.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\include\nrfx_uart.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_uart.h)(0x5B937AEB)
+F (..\..\components\libraries\util\app_util_platform.c)(0x5B937AE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\app_util_platform.o --omf_browse .\objects\app_util_platform.crf --depend .\objects\app_util_platform.d)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+F (..\..\components\libraries\util\app_error_handler_keil.c)(0x5B937AE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\app_error_handler_keil.o --omf_browse .\objects\app_error_handler_keil.crf --depend .\objects\app_error_handler_keil.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+F (..\..\components\libraries\util\app_error_weak.c)(0x5B937AE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\app_error_weak.o --omf_browse .\objects\app_error_weak.crf --depend .\objects\app_error_weak.d)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log.h)(0x5B937AE5)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\strerror\nrf_strerror.h)(0x5B937AE6)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_ctrl.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_ctrl_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_backend_interface.h)(0x5B937AE5)
+I (..\..\components\libraries\memobj\nrf_memobj.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\components\libraries\balloc\nrf_balloc.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+F (..\..\components\libraries\util\nrf_assert.c)(0x5B937AE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_assert.o --omf_browse .\objects\nrf_assert.crf --depend .\objects\nrf_assert.d)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+F (..\..\components\libraries\strerror\nrf_strerror.c)(0x5B937AE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_strerror.o --omf_browse .\objects\nrf_strerror.crf --depend .\objects\nrf_strerror.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\strerror\nrf_strerror.h)(0x5B937AE6)
+F (..\..\components\libraries\uart\retarget.c)(0x5B937AE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\retarget.o --omf_browse .\objects\retarget.crf --depend .\objects\retarget.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\uart\app_uart.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+F (..\..\components\libraries\atomic\nrf_atomic.c)(0x5B937AE5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_atomic.o --omf_browse .\objects\nrf_atomic.crf --depend .\objects\nrf_atomic.d)
+I (..\..\components\libraries\atomic\nrf_atomic.h)(0x5B937AE5)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\atomic\nrf_atomic_internal.h)(0x5B937AE5)
+F (..\..\components\libraries\memobj\nrf_memobj.c)(0x5B937AE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_memobj.o --omf_browse .\objects\nrf_memobj.crf --depend .\objects\nrf_memobj.d)
+I (..\..\components\libraries\memobj\nrf_memobj.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\balloc\nrf_balloc.h)(0x5B937AE5)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+I (..\..\components\libraries\atomic\nrf_atomic.h)(0x5B937AE5)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+F (..\..\components\libraries\cli\nrf_cli.c)(0x5B937AE5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_cli.o --omf_browse .\objects\nrf_cli.crf --depend .\objects\nrf_cli.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x57F606B6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\components\libraries\cli\nrf_cli.h)(0x5B937AE5)
+I (..\..\components\libraries\cli\nrf_cli_types.h)(0x5B937AE5)
+I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x57F606B6)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_backend_interface.h)(0x5B937AE5)
+I (..\..\components\libraries\memobj\nrf_memobj.h)(0x5B937AE6)
+I (..\..\components\libraries\balloc\nrf_balloc.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+I (..\..\components\libraries\queue\nrf_queue.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log_ctrl.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_ctrl_internal.h)(0x5B937AE5)
+I (..\..\external\fprintf\nrf_fprintf.h)(0x5B937AEB)
+I (..\..\external\fprintf\nrf_fprintf_format.h)(0x5B933EDB)
+I (..\..\components\libraries\cli\nrf_cli_vt100.h)(0x5B937AE5)
+I (..\..\components\libraries\delay\nrf_delay.h)(0x5B937AE5)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\components\libraries\pwr_mgmt\nrf_pwr_mgmt.h)(0x5B937AE6)
+I (..\..\components\libraries\experimental_section_vars\nrf_section_iter.h)(0x5B937AE5)
+I (..\..\components\libraries\atomic\nrf_atomic.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_str_formatter.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+F (..\..\components\libraries\ringbuf\nrf_ringbuf.c)(0x5B937AE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_ringbuf.o --omf_browse .\objects\nrf_ringbuf.crf --depend .\objects\nrf_ringbuf.d)
+I (..\..\components\libraries\ringbuf\nrf_ringbuf.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\..\components\libraries\atomic\nrf_atomic.h)(0x5B937AE5)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+F (..\..\external\fprintf\nrf_fprintf.c)(0x5B937AEB)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_fprintf.o --omf_browse .\objects\nrf_fprintf.crf --depend .\objects\nrf_fprintf.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x57F606B8)
+I (..\..\external\fprintf\nrf_fprintf_format.h)(0x5B933EDB)
+I (..\..\external\fprintf\nrf_fprintf.h)(0x5B937AEB)
+F (..\..\external\fprintf\nrf_fprintf_format.c)(0x5B933EDB)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_fprintf_format.o --omf_browse .\objects\nrf_fprintf_format.crf --depend .\objects\nrf_fprintf_format.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x57F606B8)
+I (..\..\external\fprintf\nrf_fprintf.h)(0x5B937AEB)
+I (..\..\external\fprintf\nrf_fprintf_format.h)(0x5B933EDB)
+F (..\..\components\libraries\pwr_mgmt\nrf_pwr_mgmt.c)(0x5B937AE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_pwr_mgmt.o --omf_browse .\objects\nrf_pwr_mgmt.crf --depend .\objects\nrf_pwr_mgmt.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\pwr_mgmt\nrf_pwr_mgmt.h)(0x5B937AE6)
+I (..\..\components\libraries\experimental_section_vars\nrf_section_iter.h)(0x5B937AE5)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\mutex\nrf_mtx.h)(0x5B937AE6)
+I (..\..\components\libraries\atomic\nrf_atomic.h)(0x5B937AE5)
+I (..\..\modules\nrfx\hal\nrf_power.h)(0x5B937AEB)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\components\libraries\log\nrf_log_ctrl.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_ctrl_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_backend_interface.h)(0x5B937AE5)
+I (..\..\components\libraries\memobj\nrf_memobj.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\components\libraries\balloc\nrf_balloc.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log.h)(0x5B937AE5)
+I (..\..\components\libraries\strerror\nrf_strerror.h)(0x5B937AE6)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+F (..\..\components\libraries\balloc\nrf_balloc.c)(0x5B937AE5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_balloc.o --omf_browse .\objects\nrf_balloc.crf --depend .\objects\nrf_balloc.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\balloc\nrf_balloc.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log.h)(0x5B937AE5)
+I (..\..\components\libraries\strerror\nrf_strerror.h)(0x5B937AE6)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\cli\nrf_cli.h)(0x5B937AE5)
+I (..\..\components\libraries\cli\nrf_cli_types.h)(0x5B937AE5)
+I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x57F606B6)
+I (..\..\components\libraries\log\nrf_log_backend_interface.h)(0x5B937AE5)
+I (..\..\components\libraries\memobj\nrf_memobj.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\components\libraries\queue\nrf_queue.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log_ctrl.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_ctrl_internal.h)(0x5B937AE5)
+I (..\..\external\fprintf\nrf_fprintf.h)(0x5B937AEB)
+I (..\..\external\fprintf\nrf_fprintf_format.h)(0x5B933EDB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x57F606B8)
+F (..\..\components\libraries\queue\nrf_queue.c)(0x5B937AE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_queue.o --omf_browse .\objects\nrf_queue.crf --depend .\objects\nrf_queue.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\queue\nrf_queue.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log.h)(0x5B937AE5)
+I (..\..\components\libraries\strerror\nrf_strerror.h)(0x5B937AE6)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\cli\nrf_cli.h)(0x5B937AE5)
+I (..\..\components\libraries\cli\nrf_cli_types.h)(0x5B937AE5)
+I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x57F606B6)
+I (..\..\components\libraries\log\nrf_log_backend_interface.h)(0x5B937AE5)
+I (..\..\components\libraries\memobj\nrf_memobj.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\components\libraries\balloc\nrf_balloc.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_ctrl.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_ctrl_internal.h)(0x5B937AE5)
+I (..\..\external\fprintf\nrf_fprintf.h)(0x5B937AEB)
+I (..\..\external\fprintf\nrf_fprintf_format.h)(0x5B933EDB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x57F606B8)
+F (..\..\components\libraries\experimental_section_vars\nrf_section_iter.c)(0x5B937AE5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_section_iter.o --omf_browse .\objects\nrf_section_iter.crf --depend .\objects\nrf_section_iter.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\experimental_section_vars\nrf_section_iter.h)(0x5B937AE5)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+F (..\..\app\lcd\lcd.c)(0x5E94113E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
+I (..\..\app\lcd\lcd.h)(0x5E941143)
+I (..\..\components\boards\boards.h)(0x5B937AE5)
+I (..\..\modules\nrfx\hal\nrf_gpio.h)(0x5B937AEB)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\components\boards\pca10056.h)(0x5B937AE5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\app\font\font.h)(0x5E941250)
+I (..\..\app\lcd\LCD_LH096TIG11G_ST7735SV.h)(0x5E8EB67D)
+F (..\..\app\datetime\datetime.c)(0x5E6B42BF)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\datetime.o --omf_browse .\objects\datetime.crf --depend .\objects\datetime.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\app\datetime\datetime.h)(0x5E93BE7E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\..\modules\nrfx\hal\nrf_nvmc.h)(0x5B937AEB)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+F (..\..\app\font\font.c)(0x5E94125F)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\font.o --omf_browse .\objects\font.crf --depend .\objects\font.d)
+I (..\..\app\font\font.h)(0x5E941250)
+F (..\..\app\image\img.c)(0x5E9412DE)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\img.o --omf_browse .\objects\img.crf --depend .\objects\img.d)
+I (..\..\app\lcd\lcd.h)(0x5E941143)
+I (..\..\components\boards\boards.h)(0x5B937AE5)
+I (..\..\modules\nrfx\hal\nrf_gpio.h)(0x5B937AEB)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\components\boards\pca10056.h)(0x5B937AE5)
+F (..\..\app\lcd\LCD_R154101_ST7796S.c)(0x5E8EB69B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\lcd_r154101_st7796s.o --omf_browse .\objects\lcd_r154101_st7796s.crf --depend .\objects\lcd_r154101_st7796s.d)
+I (..\..\app\lcd\lcd.h)(0x5E941143)
+I (..\..\components\boards\boards.h)(0x5B937AE5)
+I (..\..\modules\nrfx\hal\nrf_gpio.h)(0x5B937AEB)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\components\boards\pca10056.h)(0x5B937AE5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\app\font\font.h)(0x5E941250)
+F (..\..\app\lcd\LCD_LH096TIG11G_ST7735SV.c)(0x5E8EDD56)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\lcd_lh096tig11g_st7735sv.o --omf_browse .\objects\lcd_lh096tig11g_st7735sv.crf --depend .\objects\lcd_lh096tig11g_st7735sv.d)
+I (..\..\app\lcd\lcd.h)(0x5E941143)
+I (..\..\components\boards\boards.h)(0x5B937AE5)
+I (..\..\modules\nrfx\hal\nrf_gpio.h)(0x5B937AEB)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\components\boards\pca10056.h)(0x5B937AE5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\app\font\font.h)(0x5E941250)
+I (..\..\integration\nrfx\legacy\nrf_drv_spi.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\include\nrfx_spim.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_spim.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\include\nrfx_spi.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_spi.h)(0x5B937AEB)
+I (..\..\components\libraries\log\nrf_log.h)(0x5B937AE5)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\strerror\nrf_strerror.h)(0x5B937AE6)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+I (..\..\components\libraries\delay\nrf_delay.h)(0x5B937AE5)
+I (..\..\app\lcd\LCD_LH096TIG11G_ST7735SV.h)(0x5E8EB67D)
+F (..\..\modules\nrfx\hal\nrf_nvmc.c)(0x5B937AEB)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_nvmc.o --omf_browse .\objects\nrf_nvmc.crf --depend .\objects\nrf_nvmc.d)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal\nrf_nvmc.h)(0x5B937AEB)
+F (..\..\integration\nrfx\legacy\nrf_drv_uart.c)(0x5B937AEB)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_drv_uart.o --omf_browse .\objects\nrf_drv_uart.crf --depend .\objects\nrf_drv_uart.d)
+I (..\..\integration\nrfx\legacy\nrf_drv_uart.h)(0x5B937AEB)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\include\nrfx_uarte.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_uarte.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\include\nrfx_uart.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_uart.h)(0x5B937AEB)
+F (..\..\modules\nrfx\drivers\src\nrfx_timer.c)(0x5B937AEB)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrfx_timer.o --omf_browse .\objects\nrfx_timer.crf --depend .\objects\nrfx_timer.d)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\include\nrfx_timer.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_timer.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_log.h)(0x5B937AEB)
+I (..\..\components\libraries\log\nrf_log.h)(0x5B937AE5)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\strerror\nrf_strerror.h)(0x5B937AE6)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+F (..\..\modules\nrfx\drivers\src\nrfx_uart.c)(0x5B937AEB)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrfx_uart.o --omf_browse .\objects\nrfx_uart.crf --depend .\objects\nrfx_uart.d)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\include\nrfx_uart.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_uart.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\src\prs/nrfx_prs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_gpio.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_log.h)(0x5B937AEB)
+I (..\..\components\libraries\log\nrf_log.h)(0x5B937AE5)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\strerror\nrf_strerror.h)(0x5B937AE6)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+F (..\..\modules\nrfx\drivers\src\nrfx_uarte.c)(0x5B937AEB)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrfx_uarte.o --omf_browse .\objects\nrfx_uarte.crf --depend .\objects\nrfx_uarte.d)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\include\nrfx_uarte.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_uarte.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\src\prs/nrfx_prs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_gpio.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_log.h)(0x5B937AEB)
+I (..\..\components\libraries\log\nrf_log.h)(0x5B937AE5)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\strerror\nrf_strerror.h)(0x5B937AE6)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+F (..\..\modules\nrfx\drivers\src\prs\nrfx_prs.c)(0x5B937AEB)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrfx_prs.o --omf_browse .\objects\nrfx_prs.crf --depend .\objects\nrfx_prs.d)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\src\prs\nrfx_prs.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_log.h)(0x5B937AEB)
+I (..\..\components\libraries\log\nrf_log.h)(0x5B937AE5)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\strerror\nrf_strerror.h)(0x5B937AE6)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+F (..\..\modules\nrfx\drivers\src\nrfx_spim.c)(0x5B937AEB)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrfx_spim.o --omf_browse .\objects\nrfx_spim.crf --depend .\objects\nrfx_spim.d)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+F (..\..\modules\nrfx\drivers\src\nrfx_spi.c)(0x5B937AEB)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrfx_spi.o --omf_browse .\objects\nrfx_spi.crf --depend .\objects\nrfx_spi.d)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\include\nrfx_spi.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_spi.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\src\prs/nrfx_prs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_gpio.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_log.h)(0x5B937AEB)
+I (..\..\components\libraries\log\nrf_log.h)(0x5B937AE5)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\strerror\nrf_strerror.h)(0x5B937AE6)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+F (..\..\integration\nrfx\legacy\nrf_drv_spi.c)(0x5B937AEB)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_drv_spi.o --omf_browse .\objects\nrf_drv_spi.crf --depend .\objects\nrf_drv_spi.d)
+I (..\..\integration\nrfx\legacy\nrf_drv_spi.h)(0x5B937AEB)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\include\nrfx_spim.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_spim.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers\include\nrfx_spi.h)(0x5B937AEB)
+I (..\..\modules\nrfx\hal/nrf_spi.h)(0x5B937AEB)
+F (..\..\components\libraries\log\src\nrf_log_backend_rtt.c)(0x5B937AE5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_log_backend_rtt.o --omf_browse .\objects\nrf_log_backend_rtt.crf --depend .\objects\nrf_log_backend_rtt.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log_backend_rtt.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_backend_interface.h)(0x5B937AE5)
+I (..\..\components\libraries\memobj\nrf_memobj.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\components\libraries\balloc\nrf_balloc.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_backend_serial.h)(0x5B937AE5)
+I (..\..\external\fprintf\nrf_fprintf.h)(0x5B937AEB)
+I (..\..\components\libraries\log\nrf_log_str_formatter.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_ctrl.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_ctrl_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\delay\nrf_delay.h)(0x5B937AE5)
+I (..\..\modules\nrfx\nrfx.h)(0x5B937AEB)
+I (..\..\integration\nrfx\nrfx_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\drivers/nrfx_common.h)(0x5B937AEB)
+I (..\..\modules\nrfx\mdk\nrf_peripherals.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_peripherals.h)(0x5B933EEF)
+I (..\..\integration\nrfx\nrfx_glue.h)(0x5B937AEB)
+I (..\..\integration\nrfx\legacy/apply_old_config.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_irqs_nrf52840.h)(0x5B937AEB)
+I (..\..\modules\nrfx\soc/nrfx_coredep.h)(0x5B937AEB)
+I (..\..\components\libraries\util\sdk_resources.h)(0x5B937AE6)
+I (..\..\modules\nrfx\drivers/nrfx_errors.h)(0x5B937AEB)
+I (..\..\external\segger_rtt\SEGGER_RTT_Conf.h)(0x5B933EDC)
+I (..\..\external\segger_rtt\SEGGER_RTT.h)(0x5B933EDC)
+F (..\..\components\libraries\log\src\nrf_log_backend_serial.c)(0x5B937AE5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_log_backend_serial.o --omf_browse .\objects\nrf_log_backend_serial.crf --depend .\objects\nrf_log_backend_serial.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\log\src\nrf_log_backend_serial.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_backend_interface.h)(0x5B937AE5)
+I (..\..\components\libraries\memobj\nrf_memobj.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\components\libraries\balloc\nrf_balloc.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+I (..\..\external\fprintf\nrf_fprintf.h)(0x5B937AEB)
+I (..\..\components\libraries\log\nrf_log_str_formatter.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_ctrl.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_ctrl_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+F (..\..\components\libraries\log\src\nrf_log_backend_uart.c)(0x5B937AE5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_log_backend_uart.o --omf_browse .\objects\nrf_log_backend_uart.crf --depend .\objects\nrf_log_backend_uart.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+F (..\..\components\libraries\log\src\nrf_log_default_backends.c)(0x5B937AE5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_log_default_backends.o --omf_browse .\objects\nrf_log_default_backends.crf --depend .\objects\nrf_log_default_backends.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log_default_backends.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_ctrl.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_ctrl_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_backend_interface.h)(0x5B937AE5)
+I (..\..\components\libraries\memobj\nrf_memobj.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\components\libraries\balloc\nrf_balloc.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_backend_rtt.h)(0x5B937AE5)
+F (..\..\components\libraries\log\src\nrf_log_frontend.c)(0x5B937AE5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_log_frontend.o --omf_browse .\objects\nrf_log_frontend.crf --depend .\objects\nrf_log_frontend.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log.h)(0x5B937AE5)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\strerror\nrf_strerror.h)(0x5B937AE6)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_ctrl.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_ctrl_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_backend_interface.h)(0x5B937AE5)
+I (..\..\components\libraries\memobj\nrf_memobj.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\components\libraries\balloc\nrf_balloc.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_str_formatter.h)(0x5B937AE5)
+I (..\..\external\fprintf\nrf_fprintf.h)(0x5B937AEB)
+I (..\..\components\libraries\ringbuf\nrf_ringbuf.h)(0x5B937AE6)
+I (..\..\components\libraries\atomic\nrf_atomic.h)(0x5B937AE5)
+I (..\..\components\libraries\cli\nrf_cli.h)(0x5B937AE5)
+I (..\..\components\libraries\cli\nrf_cli_types.h)(0x5B937AE5)
+I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x57F606B6)
+I (..\..\components\libraries\queue\nrf_queue.h)(0x5B937AE6)
+I (..\..\external\fprintf\nrf_fprintf_format.h)(0x5B933EDB)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x57F606B8)
+F (..\..\components\libraries\log\src\nrf_log_str_formatter.c)(0x5B937AE6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\nrf_log_str_formatter.o --omf_browse .\objects\nrf_log_str_formatter.crf --depend .\objects\nrf_log_str_formatter.d)
+I (..\..\components\libraries\util\sdk_common.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_os.h)(0x5B937AE6)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\sdk_macros.h)(0x5B937AE6)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log_str_formatter.h)(0x5B937AE5)
+I (..\..\external\fprintf\nrf_fprintf.h)(0x5B937AEB)
+I (..\..\components\libraries\log\nrf_log_ctrl.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_types.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_ctrl_internal.h)(0x5B937AE5)
+I (..\..\components\libraries\log\nrf_log_backend_interface.h)(0x5B937AE5)
+I (..\..\components\libraries\memobj\nrf_memobj.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\..\components\libraries\balloc\nrf_balloc.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\..\components\libraries\log\nrf_log_instance.h)(0x5B937AE5)
+I (..\..\components\libraries\experimental_section_vars\nrf_section.h)(0x5B937AE5)
+I (..\..\components\libraries\log\src\nrf_log_internal.h)(0x5B937AE5)
+I (C:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x57F606B6)
+F (..\..\external\segger_rtt\SEGGER_RTT.c)(0x5B933EDC)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\segger_rtt.o --omf_browse .\objects\segger_rtt.crf --depend .\objects\segger_rtt.d)
+I (..\..\external\segger_rtt\SEGGER_RTT.h)(0x5B933EDC)
+I (..\..\external\segger_rtt\SEGGER_RTT_Conf.h)(0x5B933EDC)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+F (..\..\external\segger_rtt\SEGGER_RTT_Syscalls_KEIL.c)(0x5B933EDC)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\segger_rtt_syscalls_keil.o --omf_browse .\objects\segger_rtt_syscalls_keil.crf --depend .\objects\segger_rtt_syscalls_keil.d)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+F (..\..\external\segger_rtt\SEGGER_RTT_printf.c)(0x5B933EDC)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\segger_rtt_printf.o --omf_browse .\objects\segger_rtt_printf.crf --depend .\objects\segger_rtt_printf.d)
+I (..\..\external\segger_rtt\SEGGER_RTT.h)(0x5B933EDC)
+I (..\..\external\segger_rtt\SEGGER_RTT_Conf.h)(0x5B933EDC)
+I (..\..\components\libraries\util\nordic_common.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_util_platform.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\components\libraries\util\nrf_assert.h)(0x5B937AE6)
+I (..\..\components\libraries\util\app_error.h)(0x5B937AE6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\components\libraries\util\sdk_errors.h)(0x5B937AE6)
+I (..\..\components\drivers_nrf\nrf_soc_nosd\nrf_error.h)(0x5B937AE5)
+I (..\..\components\libraries\util\app_error_weak.h)(0x5B937AE6)
+I (..\config\sdk_config.h)(0x5E8D6FD6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x57F606B8)
+F (RTE\Device\nRF52840_xxAA\arm_startup_nrf52840.s)(0x5DB2517C)(--cpu Cortex-M4.fp --li -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include--pd "__UVISION_VERSION SETA 523" --pd "_RTE_ SETA 1" --pd "NRF52840_XXAA SETA 1"--list .\listings\arm_startup_nrf52840.lst --xref -o .\objects\arm_startup_nrf52840.o --depend .\objects\arm_startup_nrf52840.d)
+F (RTE\Device\nRF52840_xxAA\system_nrf52840.c)(0x5DEA23B8)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB --li -g -O0 --apcs=interwork --split_sections -I ..\config -I ..\..\components\boards -I ..\..\components\drivers_nrf\nrf_soc_nosd -I ..\..\components\libraries\delay -I ..\..\components\libraries\util -I ..\..\components\libraries\strerror -I ..\..\components\libraries\log -I ..\..\components\libraries\log\src -I ..\..\components\libraries\memobj -I ..\..\components\libraries\atomic -I ..\..\components\libraries\balloc -I ..\..\components\libraries\cli -I ..\..\components\libraries\experimental_section_vars -I ..\..\components\libraries\fifo -I ..\..\components\libraries\uart -I ..\..\components\libraries\ringbuf -I ..\..\components\libraries\queue -I ..\..\components\libraries\pwr_mgmt -I ..\..\components\libraries\mutex -I ..\..\external\fprintf -I ..\..\external\segger_rtt -I ..\..\modules\nrfx -I ..\..\modules\nrfx\hal -I ..\..\modules\nrfx\mdk -I ..\..\modules\nrfx\drivers\include -I ..\..\integration\nrfx -I ..\..\integration\nrfx\legacy -I ..\..\app\lcd -I ..\..\app\datetime -I ..\..\app\font -I ..\..\app\image --reduce_paths-I.\RTE\_IK-52840DK-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include-IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include-D__UVISION_VERSION="523" -D_RTE_ -DNRF52840_XXAA -DBOARD_PCA10056 -DFLOAT_ABI_HARD -DCONFIG_GPIO_AS_PINRESET -DNRF52840_XXAA -DBSP_DEFINES_ONLY -D_STACK_SIZE="8192" -D_HEAP_SIZE="8192"-o .\objects\system_nrf52840.o --omf_browse .\objects\system_nrf52840.crf --depend .\objects\system_nrf52840.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x57F606B8)
+I (..\..\modules\nrfx\mdk\nrf.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840.h)(0x5B933EEF)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5625B70C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625A350)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h)(0x5625A350)
+I (..\..\modules\nrfx\mdk\system_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52840_bitfields.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h)(0x5B933EEF)
+I (..\..\modules\nrfx\mdk\compiler_abstraction.h)(0x5B933EEF)

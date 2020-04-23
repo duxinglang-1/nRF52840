@@ -1,0 +1,123 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.23.0.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: test Administrator, August, LIC=LSNPC-7K9BH-NMU9F-6R8KV-L22WE-51LH5
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.23
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 4 (build 422)
+Assembler:       Armasm.exe V5.06 update 4 (build 422)
+Linker/Locator:  ArmLink.exe V5.06 update 4 (build 422)
+Library Manager: ArmAr.exe V5.06 update 4 (build 422)
+Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
+CPU DLL:         SARMCM3.DLL V5.23
+Dialog DLL:      DARMCM1.DLL V1.17.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.23.0
+Dialog DLL:      TARMCM1.DLL V1.12.0.0
+ 
+<h2>Project:</h2>
+D:\software\nrf52840\my_test\test_show_pic_font\project\mdk5\test.uvprojx
+Project File Date:  04/08/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'IK-52840DK'
+compiling main.c...
+..\..\app\main.c(181): warning:  #223-D: function "strcpy" declared implicitly
+  	strcpy((char*)str_week, (const char*)week[date_time.week]);
+..\..\app\main.c(402): warning:  #223-D: function "LCD_Clear" declared implicitly
+  	LCD_Clear(BLACK);
+..\..\app\main.c(400): warning:  #177-D: variable "x"  was declared but never referenced
+  	int32_t x,y;
+..\..\app\main.c(400): warning:  #177-D: variable "y"  was declared but never referenced
+  	int32_t x,y;
+..\..\app\main.c(464): warning:  #223-D: function "memcpy" declared implicitly
+  	memcpy(&last_date_time, &date_time, sizeof(sys_date_timer_t));
+..\..\app\main.c(579): warning:  #223-D: function "BlockWrite" declared implicitly
+  			BlockWrite((LCD_WIDTH-8*8)/2+6*8,(LCD_HEIGHT-16)/2,2*8,16);//擦除以前的秒钟
+..\..\app\main.c(584): warning:  #223-D: function "BlockWrite" declared implicitly
+  			BlockWrite((LCD_WIDTH-8*8)/2+3*8,(LCD_HEIGHT-16)/2,2*8,16);//擦除以前的分钟
+..\..\app\main.c(589): warning:  #223-D: function "BlockWrite" declared implicitly
+  			BlockWrite((LCD_WIDTH-8*8)/2,(LCD_HEIGHT-16)/2,2*8,16);//擦除以前的时钟
+..\..\app\main.c(594): warning:  #223-D: function "BlockWrite" declared implicitly
+  			BlockWrite((LCD_WIDTH-10*8)/2,(LCD_HEIGHT-16)/2+30,10*8,16);
+..\..\app\main.c(632): warning:  #223-D: function "LCD_Clear" declared implicitly
+  	LCD_Clear(BLACK);
+..\..\app\main.c(630): warning:  #177-D: variable "x"  was declared but never referenced
+  	uint16_t x,y,w,h;
+..\..\app\main.c(630): warning:  #177-D: variable "y"  was declared but never referenced
+  	uint16_t x,y,w,h;
+..\..\app\main.c(676): warning:  #223-D: function "LCD_Clear" declared implicitly
+  	LCD_Clear(BLACK);								//清屏
+..\..\app\main.c(755): warning:  #223-D: function "LCD_Init" declared implicitly
+  	LCD_Init();												//初始化LCD
+..\..\app\main.c(799): warning:  #177-D: variable "x1"  was declared but never referenced
+  			uint16_t x1,y1,x2,y2;
+..\..\app\main.c(799): warning:  #177-D: variable "y1"  was declared but never referenced
+  			uint16_t x1,y1,x2,y2;
+..\..\app\main.c(799): warning:  #177-D: variable "x2"  was declared but never referenced
+  			uint16_t x1,y1,x2,y2;
+..\..\app\main.c(799): warning:  #177-D: variable "y2"  was declared but never referenced
+  			uint16_t x1,y1,x2,y2;
+..\..\app\main.c(800): warning:  #177-D: variable "width"  was declared but never referenced
+  			uint32_t width, height;
+..\..\app\main.c(800): warning:  #177-D: variable "height"  was declared but never referenced
+  			uint32_t width, height;
+..\..\app\main.c(737): warning:  #177-D: variable "err_code"  was declared but never referenced
+  	uint32_t err_code;
+..\..\app\main.c(738): warning:  #177-D: variable "addr"  was declared but never referenced
+  	uint32_t addr;
+..\..\app\main.c(739): warning:  #177-D: variable "pdat"  was declared but never referenced
+  	uint32_t *pdat;											//定义读取Flash的指针
+..\..\app\main.c(87): warning:  #177-D: variable "show_pic_count"  was declared but never referenced
+  static uint8_t show_pic_count = 0;//图片显示顺序
+..\..\app\main.c(614): warning:  #177-D: function "test_show_digital_clock"  was declared but never referenced
+  void test_show_digital_clock(void)
+..\..\app\main.c(718): warning:  #177-D: function "power_manage"  was declared but never referenced
+  static void power_manage(void)
+..\..\app\main.c: 26 warnings, 0 errors
+linking...
+.\Objects\nrf52840_qiaa.axf: Warning: L6330W: Undefined symbol nrf_queue$$Base (referred from nrf_queue.o). Unused section has been removed.
+.\Objects\nrf52840_qiaa.axf: Warning: L6330W: Undefined symbol nrf_queue$$Limit (referred from nrf_queue.o). Unused section has been removed.
+Program Size: Code=24640 RO-data=267200 RW-data=129056 ZI-data=10400  
+Finished: 0 information, 2 warning and 0 error messages.
+FromELF: creating hex file...
+".\Objects\nrf52840_qiaa.axf" - 0 Error(s), 28 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
+                ARM::CMSIS:CORE:4.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 4.3.0
+
+Package Vendor: NordicSemiconductor
+                http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/NordicSemiconductor.nRF_DeviceFamilyPack.8.17.0.pack
+                NordicSemiconductor::Device:Startup:8.17.0
+                Nordic Semiconductor nRF ARM devices Device Family Pack.
+   * Component: Startup Version: 8.17.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_IK-52840DK
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.17.0\Device\Include
+  C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.24.1\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:4.3.0
+
+   * Component: NordicSemiconductor::Device:Startup:8.17.0
+      Source file:   Device\Source\system_nrf52840.c
+      Source file:   Device\Source\arm\arm_startup_nrf52840.s
+      Include file:  Device\Include\system_nrf52840.h
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
