@@ -1,0 +1,16 @@
+.\objects\app_mw_nrf_soc.o: ..\..\components\serialization\application\codecs\ble\middleware\app_mw_nrf_soc.c
+.\objects\app_mw_nrf_soc.o: ..\..\components\drivers_nrf\nrf_soc_nosd\nrf_soc.h
+.\objects\app_mw_nrf_soc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\app_mw_nrf_soc.o: ..\..\modules\nrfx\mdk\nrf.h
+.\objects\app_mw_nrf_soc.o: ..\..\modules\nrfx\mdk\nrf52840.h
+.\objects\app_mw_nrf_soc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h
+.\objects\app_mw_nrf_soc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\app_mw_nrf_soc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\app_mw_nrf_soc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\app_mw_nrf_soc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h
+.\objects\app_mw_nrf_soc.o: ..\..\modules\nrfx\mdk\system_nrf52840.h
+.\objects\app_mw_nrf_soc.o: ..\..\modules\nrfx\mdk\nrf52840_bitfields.h
+.\objects\app_mw_nrf_soc.o: ..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h
+.\objects\app_mw_nrf_soc.o: ..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h
+.\objects\app_mw_nrf_soc.o: ..\..\modules\nrfx\mdk\compiler_abstraction.h
+.\objects\app_mw_nrf_soc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
