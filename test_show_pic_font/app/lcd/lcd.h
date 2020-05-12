@@ -2,8 +2,8 @@
 #define __LCD_H__
 #include "boards.h"
 
-//#define LCD_R154101_ST7796S
-#define LCD_LH096TIG11G_ST7735SV
+#define LCD_R154101_ST7796S
+//#define LCD_LH096TIG11G_ST7735SV
 
 //LCD的宽度和高度
 extern uint16_t  LCD_WIDTH;

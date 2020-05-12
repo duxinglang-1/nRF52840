@@ -141,7 +141,7 @@ void timer_clock_event_handler(nrf_timer_event_t event_type, void* p_context)
 void timer_init(void)
 {
 	uint32_t err_code = NRF_SUCCESS;
-	uint32_t time_ms = 1000;//定义时间1000ms
+	uint32_t time_ms = 500;
 	uint32_t time_ticks;
 	
 	//定义定时器配置结构体，并使用默认配置参数初始化结构体
@@ -174,8 +174,12 @@ void idle_show_digital_clock(void)
 	
 	POINT_COLOR=WHITE;
 	BACK_COLOR=BLACK;
+#if defined(LCD_R154101_ST7796S)
+	LCD_SetFontSize(FONT_SIZE_24);
+#elif defined()
 	LCD_SetFontSize(FONT_SIZE_16);
-	
+#endif
+
 	sprintf((char*)str_time, "%02d:%02d:%02d", date_time.hour, date_time.minute, date_time.second);
 	sprintf((char*)str_date, "%04d/%02d/%02d", date_time.year, date_time.month, date_time.day);
 	strcpy((char*)str_week, (const char*)week[date_time.week]);
@@ -320,23 +324,23 @@ void idle_show_analog_clock(void)
 	}
 	else if(date_time_changed != 0)
 	{
-		if(((date_time_changed&0x04) != 0) || ((date_time.hour%12 == 0) && (last_date_time.second == 0)))//时钟有变化
+		//if(((date_time_changed&0x04) != 0) || ((date_time.hour%12 == 0) && (last_date_time.second == 0)))//时钟有变化
 		{
 			radraw_hour_hand(date_time.hour, date_time.minute, false);
 			date_time_changed = date_time_changed&0xFB;
 		}
-		if((date_time_changed&0x02) != 0 || date_time.minute == last_date_time.second)//分钟有变化
+		//if((date_time_changed&0x02) != 0 || date_time.minute == last_date_time.second)//分钟有变化
 		{
 			radraw_minute_hand(date_time.minute, false);
 			date_time_changed = date_time_changed&0xFD;
 		}
-		if((date_time_changed&0x01) != 0)//秒钟有改变
+		//if((date_time_changed&0x01) != 0)//秒钟有改变
 		{
 			radraw_second_hand(date_time.second, false);
 			date_time_changed = date_time_changed&0xFE;
 		}
 		
-		if((date_time_changed&0x38) != 0)//日期有改变
+		//if((date_time_changed&0x38) != 0)//日期有改变
 		{
 			POINT_COLOR=WHITE;
 			LCD_ShowString((LCD_WIDTH-10*12)/2,(LCD_HEIGHT-24)/2+80,str_date);//日期所示
@@ -679,16 +683,7 @@ int main(void)
 	
 	gpio_output_voltage_setup_3v3();						//设置GPIO输出电压为3.3V
 	bsp_board_init(BSP_INIT_LEDS | BSP_INIT_BUTTONS);		//初始化开发板上的4个LED，即将驱动LED的GPIO配置为输出，
-	nrf_gpio_cfg_input(BUTTON_1,NRF_GPIO_PIN_PULLUP);		//配置P0.13为输入，检测按键S1状态
-	nrf_gpio_cfg_input(BUTTON_2,NRF_GPIO_PIN_PULLUP);		//配置P0.14为输入，检测按键S2状态
-
-//	while(true)
-//	{
-//		power_manage();
-//	}
-	
-	nrf_gpio_cfg_output(LED_1);								//配置用于驱动LED指示灯D1的管脚，即配置P0.13为输出
-	nrf_gpio_pin_set(LED_1);   								//LED指示灯D1初始状态设置为熄灭，即引脚P0.13为输出高电平
+	nrf_gpio_pin_clear(LED_1);   							//LED指示灯D1初始状态设置为点亮
 
 	LCD_Init();												//初始化LCD
 	
@@ -697,61 +692,23 @@ int main(void)
 	test_show_analog_clock();								//指针时钟测试
 //	test_show_digital_clock();								//数字时钟测试
 	
-//	LCD_ShowxNum(50,160,7686,4,0);							//显示数字
-//	LCD_Draw_Circle(LCD_WIDTH/2,LCD_HEIGHT/2,150);						//画圆
-//	LCD_DrawRectangle(0, 0, LCD_WIDTH, LCD_HEIGHT);						//画矩形
-//	LCD_Fill(0, 0, LCD_WIDTH, LCD_HEIGHT,YELLOW);						//填充颜色
-
-//	POINT_COLOR=BLUE;
-//	LCD_DrawLine(100,90,260,250);
-
 	while(true)
 	{
 		if(update_date_time)
 		{
 			update_date_time = false;
-			idle_show_time();
-		}
-		
-		if(nrf_gpio_pin_read(BUTTON_1) == 0)			//检测按键S1是否按下
-		{
-			nrf_gpio_pin_clear(LED_2);
-			while(nrf_gpio_pin_read(BUTTON_1) == 0);	//等待按键释放
 
-//			addr = 0x0007f000;							//待擦除页的起始地址
-//			nrf_nvmc_page_erase(addr);					//擦除页（127页）
-//			nrf_nvmc_write_word(addr,12345678);		//向地址0x0007f000写入一个字0x12345678
-//			pdat = (uint32_t *)addr;					//读出数据并通过串口打印出数据
-//			
-//			pdat = (uint32_t *)0x0007f000;
-//			//printf("0x%x was read from flash\r\n", *pdat);//串口打印出flash中的数据
-//			LCD_ShowxNum(50,160,*pdat,9,0);			//LCD显示flash中的数据
+			nrf_gpio_pin_toggle(LED_2);
 			
-			nrf_gpio_pin_set(LED_2);					//熄灭LED灯
+			t++;
+			if(t == 2)
+			{
+				t = 0;
+				idle_show_time();
+			}
 		}
-		
-		if(nrf_gpio_pin_read(BUTTON_2) == 0)
-		{
-			uint16_t x1,y1,x2,y2;
-			uint32_t width, height;
-			
-			nrf_gpio_pin_clear(LED_2);
-			while(nrf_gpio_pin_read(BUTTON_2) == 0);	//等待按键释放
 
-			
-			nrf_gpio_pin_set(LED_2);	
-		}
-		
-		if(t > 49)
-		{
-			//以下是用nrf_gpio_pin_toggle函数实现驱动led闪烁
-			//翻转引脚P0.13的输出状态，即翻转指示灯D1的状态
-			nrf_gpio_pin_toggle(LED_1);
-			t = 0;
-		}
-		
-		nrf_delay_ms(10);								//软件延时10ms
-		t++;
+		power_manage();
 	}
 }
 /********************************************END FILE**************************************/
