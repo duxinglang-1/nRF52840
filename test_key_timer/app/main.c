@@ -128,16 +128,16 @@ void system_init(void)
 {
 	uint32_t err_code;
 
-	err_code = nrf_drv_clock_init();
-	APP_ERROR_CHECK(err_code);
-	nrf_drv_clock_lfclk_request(NULL);
+	//err_code = nrf_drv_clock_init();
+	//APP_ERROR_CHECK(err_code);
+	//nrf_drv_clock_lfclk_request(NULL);
 
 	gpio_output_voltage_setup_3v3();						//设置GPIO输出电压为3.3V
 
 	//按键初始化
-	key_init();
+	//key_init();
 	//LCD初始化
-	LCD_Init();	
+	//LCD_Init();	
 }
 
 /***************************************************************************
@@ -154,14 +154,35 @@ int main(void)
 
 	system_init();
 
-	nrf_gpio_cfg_output(LED_1);								//配置用于驱动LED指示灯D1的管脚，即配置P0.13为输出
-	nrf_gpio_cfg_output(LED_2);								//配置用于驱动LED指示灯D1的管脚，即配置P0.13为输出
-	nrf_gpio_cfg_output(LED_3);								//配置用于驱动LED指示灯D1的管脚，即配置P0.13为输出
-	nrf_gpio_cfg_output(LED_4);								//配置用于驱动LED指示灯D1的管脚，即配置P0.13为输出
-	nrf_gpio_pin_set(LED_1);   								//LED指示灯D1初始状态设置为熄灭，即引脚P0.13为输出高电平
-	nrf_gpio_pin_set(LED_2);								//LED指示灯D1初始状态设置为熄灭，即引脚P0.13为输出高电平
-	nrf_gpio_pin_set(LED_3);								//LED指示灯D1初始状态设置为熄灭，即引脚P0.13为输出高电平
-	nrf_gpio_pin_set(LED_4);								//LED指示灯D1初始状态设置为熄灭，即引脚P0.13为输出高电平
+	nrf_gpio_cfg_output(NRF_GPIO_PIN_MAP(0,6)); 							//配置P0.6为输出
+	nrf_gpio_cfg_output(NRF_GPIO_PIN_MAP(0,8)); 							//配置P0.8为输出
+	nrf_gpio_cfg_output(NRF_GPIO_PIN_MAP(0,13)); 							//配置P0.13为输出
+	nrf_gpio_cfg_output(NRF_GPIO_PIN_MAP(0,24)); 							//配置P0.24为输出
+	nrf_gpio_cfg_output(NRF_GPIO_PIN_MAP(0,26));							//配置P0.26为输出
+
+	nrf_gpio_cfg_output(NRF_GPIO_PIN_MAP(1,1));								//配置P1.1为输出
+	nrf_gpio_cfg_output(NRF_GPIO_PIN_MAP(1,3));								//配置P1.3为输出
+	nrf_gpio_cfg_output(NRF_GPIO_PIN_MAP(1,5));								//配置P1.5为输出
+	nrf_gpio_cfg_output(NRF_GPIO_PIN_MAP(1,7));								//配置P1.7为输出
+	nrf_gpio_cfg_output(NRF_GPIO_PIN_MAP(1,9));								//配置P1.9为输出
+	nrf_gpio_cfg_output(NRF_GPIO_PIN_MAP(1,10));							//配置P1.10为输出
+	nrf_gpio_cfg_output(NRF_GPIO_PIN_MAP(1,12));							//配置P1.12为输出
+	nrf_gpio_cfg_output(NRF_GPIO_PIN_MAP(1,14));							//配置P1.14为输出
+	
+	nrf_gpio_pin_set(NRF_GPIO_PIN_MAP(0,6));								//引脚P0.6为输出高电平
+	nrf_gpio_pin_set(NRF_GPIO_PIN_MAP(0,8));   								//引脚P0.8为输出高电平
+	nrf_gpio_pin_set(NRF_GPIO_PIN_MAP(0,26));   							//引脚P0.26为输出高电平
+	nrf_gpio_pin_set(NRF_GPIO_PIN_MAP(1,1));   								//引脚P1.1为输出高电平
+	nrf_gpio_pin_set(NRF_GPIO_PIN_MAP(1,3));								//引脚P1.3为输出高电平
+	nrf_gpio_pin_set(NRF_GPIO_PIN_MAP(1,5));								//引脚P1.5为输出高电平
+	nrf_gpio_pin_set(NRF_GPIO_PIN_MAP(1,7));								//引脚P1.7为输出高电平
+	nrf_gpio_pin_set(NRF_GPIO_PIN_MAP(1,9));								//引脚P1.9为输出高电平
+	nrf_gpio_pin_set(NRF_GPIO_PIN_MAP(1,14));								//引脚P1.14为输出高电平
+	
+	nrf_gpio_pin_clear(NRF_GPIO_PIN_MAP(0,13));								//引脚P0.13为输出低电平
+	nrf_gpio_pin_clear(NRF_GPIO_PIN_MAP(0,24));								//引脚P0.24为输出低电平
+	nrf_gpio_pin_clear(NRF_GPIO_PIN_MAP(1,10));								//引脚P1.10为输出低电平
+	nrf_gpio_pin_clear(NRF_GPIO_PIN_MAP(1,12));								//引脚P1.12为输出低电平
 
 	//bsp_board_init(BSP_INIT_LEDS|BSP_INIT_BUTTONS);
 	
