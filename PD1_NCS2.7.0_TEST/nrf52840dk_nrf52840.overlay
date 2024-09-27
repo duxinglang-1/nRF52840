@@ -97,6 +97,16 @@
 	pinctrl-names = "default", "sleep";
 };
 
+&uart1{
+	compatible = "nordic,nrf-uarte";
+	status = "disabled";
+};
+
+&i2c0{
+	compatible = "nordic,nrf-twim";
+	status = "disabled";
+};
+
 &i2c1{
 	compatible = "nordic,nrf-twim";
 	status = "okay";
@@ -104,6 +114,16 @@
 	pinctrl-0 = <&i2c1_default>;
 	pinctrl-1 = <&i2c1_sleep>;
 	pinctrl-names = "default", "sleep";
+};
+
+&spi0{
+	compatible = "nordic,nrf-spim";
+	status = "disabled";
+};
+
+&spi1{
+	compatible = "nordic,nrf-spim";
+	status = "disabled";
 };
 
 &spi2{

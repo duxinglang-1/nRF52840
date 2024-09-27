@@ -1,24 +1,10 @@
 #
-# Copyright (c) 2021 Nordic Semiconductor ASA
+# Copyright (c) 2023 Nordic Semiconductor
 #
 # SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
 #
 
 cmake_minimum_required(VERSION 3.20.0)
-
-if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/spm.conf")
-  set(spm_CONF_FILE
-    prj.conf
-    ${CMAKE_CURRENT_LIST_DIR}/spm.conf
-  )
-endif()
-
-if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/mcuboot.conf")
-  set(mcuboot_CONF_FILE
-    prj.conf
-    ${CMAKE_CURRENT_LIST_DIR}/mcuboot.conf
-  )
-endif()
 
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(PD1)

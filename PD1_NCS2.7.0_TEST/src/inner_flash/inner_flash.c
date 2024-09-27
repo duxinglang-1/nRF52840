@@ -6,10 +6,9 @@
 ** Modified Date:      		2021-07-12
 ** Version:			    	V1.1
 ******************************************************************************************************/
-#include <zephyr/fs/nvs.h>
-#include <flash_map_pm.h>
-#include <zephyr/device.h>
 #include <zephyr/drivers/flash.h>
+#include <zephyr/storage/flash_map.h>
+#include <zephyr/fs/nvs.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -54,7 +53,6 @@ static int nvs_setup(void)
     struct device *flash_dev;
 	int err;	
 
-	//flash_dev = FLASH_AREA_DEVICE(STORAGE_NODE_LABEL);
 	fs.flash_device = NVS_PARTITION_DEVICE;
 	if(!device_is_ready(fs.flash_device))
 	{
