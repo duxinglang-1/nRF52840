@@ -6,7 +6,6 @@
 
 #include <zephyr/kernel.h>
 #include <stdio.h>
-#include <nrf_modem_gnss.h>
 
 #define APP_WAIT_GPS_TIMEOUT	(3*60)
 

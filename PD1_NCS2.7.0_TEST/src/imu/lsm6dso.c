@@ -1,9 +1,6 @@
 #ifdef CONFIG_IMU_SUPPORT
-
-#include <nrf9160.h>
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
-#include <nrf_socket.h>
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/drivers/gpio.h>
 #include <string.h>

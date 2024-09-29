@@ -1,6 +1,4 @@
 #ifdef CONFIG_IMU_SUPPORT
-
-#include <nrf9160.h>
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include "inner_flash.h"

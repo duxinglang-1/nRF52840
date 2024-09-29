@@ -15,6 +15,7 @@
 #include "transfer_cache.h"
 #include "datetime.h"
 #include "Settings.h"
+#include "screen.h"
 #include "Uart_ble.h"
 #include "max20353.h"
 #ifdef CONFIG_PPG_SUPPORT
@@ -228,8 +229,10 @@ void APP_set_language(uint8_t *buf, uint32_t len)
 		global_settings.language = LANGUAGE_CHN;
 	else if(buf[7] == 0x01)
 		global_settings.language = LANGUAGE_EN;
+#ifndef FW_FOR_CN	
 	else if(buf[7] == 0x02)
 		global_settings.language = LANGUAGE_DE;
+#endif	
 	else
 		global_settings.language = LANGUAGE_EN;
 		
@@ -660,6 +663,7 @@ void APP_get_one_key_measure_data(uint8_t *buf, uint32_t len)
 }
 #endif
 
+#ifdef CONFIG_PPG_SUPPORT
 void MCU_reply_cur_hour_ppg(sys_date_timer_t time, PPG_DATA_TYPE type, uint8_t *data)
 {
 	uint8_t reply[128] = {0};
@@ -731,7 +735,9 @@ void MCU_reply_cur_hour_ppg(sys_date_timer_t time, PPG_DATA_TYPE type, uint8_t *
 
 	BleSendData(reply, reply_len);
 }
+#endif
 
+#ifdef CONFIG_TEMP_SUPPORT
 void MCU_reply_cur_hour_temp(sys_date_timer_t time, uint8_t *data)
 {
 	uint8_t reply[128] = {0};
@@ -775,11 +781,14 @@ void MCU_reply_cur_hour_temp(sys_date_timer_t time, uint8_t *data)
 
 	BleSendData(reply, reply_len);
 }
+#endif
 
 void APP_get_cur_hour_health(sys_date_timer_t ask_time)
 {
 	uint8_t hr = 0,spo2 = 0;
+#ifdef CONFIG_PPG_SUPPORT	
 	bpt_data bpt = {0};
+#endif
 	uint16_t temp = 0;
 	uint8_t data[2] = {0};
 
@@ -796,13 +805,17 @@ void APP_get_cur_hour_health(sys_date_timer_t ask_time)
 	GetGivenTimeTempRecData(ask_time, &temp);
 #endif
 
+#ifdef CONFIG_PPG_SUPPORT
 	MCU_reply_cur_hour_ppg(ask_time, PPG_DATA_HR, &hr);
 	MCU_reply_cur_hour_ppg(ask_time, PPG_DATA_SPO2, &spo2);
 	MCU_reply_cur_hour_ppg(ask_time, PPG_DATA_BPT, (uint8_t*)&bpt);
+#endif
 
+#ifdef CONFIG_TEMP_SUPPORT
 	data[0] = temp>>8;
 	data[1] = (uint8_t)(temp&0x00ff);
 	MCU_reply_cur_hour_temp(ask_time, data);
+#endif	
 }
 
 void APP_get_cur_hour_sport(sys_date_timer_t ask_time)
@@ -888,11 +901,11 @@ void APP_get_location_data(uint8_t *buf, uint32_t len)
 	LOGD("begin");
 #endif
 
-	ble_wait_gps = true;
-	APP_Ask_GPS_Data();
+#ifdef CONFIG_GPS_SUPPORT
+#endif	
 }
 
-void APP_get_gps_data_reply(bool flag, struct nrf_modem_gnss_pvt_data_frame gps_data)
+void APP_get_gps_data_reply(bool flag, void *gps_data)
 {
 	uint8_t tmpgps;
 	uint8_t reply[128] = {0};
@@ -915,7 +928,8 @@ void APP_get_gps_data_reply(bool flag, struct nrf_modem_gnss_pvt_data_frame gps_
 	reply[reply_len++] = 0x80;
 	//control
 	reply[reply_len++] = 0x00;
-	
+
+#if 0	//xb test 2024-09-29	
 	//UTC data&time
 	//year
 	reply[reply_len++] = gps_data.datetime.year>>8;
@@ -975,6 +989,7 @@ void APP_get_gps_data_reply(bool flag, struct nrf_modem_gnss_pvt_data_frame gps_
 	tmp1 = tmp1%100;
 	//degree dot5~6
 	reply[reply_len++] = (uint8_t)(tmp1);
+#endif
 					
 	//CRC
 	reply[reply_len++] = 0x00;
@@ -1236,6 +1251,7 @@ void APP_get_bpt(uint8_t *buf, uint32_t len)
 		uint8_t data[2] = {0};
 		health_record_t last_data = {0};
 
+	#ifdef CONFIG_PPG_SUPPORT
 		switch(buf[5])
 		{
 		case 0x01://实时测量血压
@@ -1249,9 +1265,11 @@ void APP_get_bpt(uint8_t *buf, uint32_t len)
 			MCU_send_app_get_ppg_data(PPG_DATA_BPT, data);
 			break;
 		}
+	#endif	
 	}
 }
 #endif
+
 #ifdef CONFIG_TEMP_SUPPORT
 void APP_get_temp(uint8_t *buf, uint32_t len)
 {
@@ -1429,6 +1447,7 @@ void MCU_send_app_one_key_measure_data(void)
 	BleSendData(reply, reply_len);
 }
 
+#ifdef CONFIG_PPG_SUPPORT
 void MCU_send_app_get_ppg_data(PPG_DATA_TYPE flag, uint8_t *data)
 {
 	uint8_t reply[128] = {0};
@@ -1486,7 +1505,9 @@ void MCU_send_app_get_ppg_data(PPG_DATA_TYPE flag, uint8_t *data)
 
 	BleSendData(reply, reply_len);
 }
+#endif
 
+#ifdef CONFIG_TEMP_SUPPORT
 void MCU_send_app_get_temp_data(uint8_t *data)
 {
 	uint8_t reply[128] = {0};
@@ -1521,6 +1542,7 @@ void MCU_send_app_get_temp_data(uint8_t *data)
 
 	BleSendData(reply, reply_len);
 }
+#endif
 
 void nrf52810_report_work_mode(uint8_t *buf, uint32_t len)
 {
@@ -1811,7 +1833,7 @@ void ble_receive_data_handle(uint8_t *buf, uint32_t len)
 	case BLE_WORK_MODE_ID:
 		nrf52810_report_work_mode(buf, len);//52810工作状态
 		break;
-	#ifdef CONFIG_PPG_SUPPORT
+#ifdef CONFIG_PPG_SUPPORT
 	case HEART_RATE_ID:			//心率
 		APP_get_hr(buf, len);
 		break;
@@ -1821,13 +1843,15 @@ void ble_receive_data_handle(uint8_t *buf, uint32_t len)
 	case BLOOD_PRESSURE_ID:		//血压
 		APP_get_bpt(buf, len);
 		break;
-	case TEMPERATURE_ID:		//体温
-		APP_get_temp(buf, len);
-		break;	
 	case ONE_KEY_MEASURE_ID:	//一键测量
 		APP_get_one_key_measure_data(buf, len);
 		break;
-	#endif
+#endif
+#ifdef CONFIG_TEMP_SUPPORT	
+	case TEMPERATURE_ID:		//体温
+		APP_get_temp(buf, len);
+		break;
+#endif	
 	case PULL_REFRESH_ID:		//下拉刷新
 		APP_get_cur_hour_data(buf, len);
 		break;
@@ -2153,7 +2177,7 @@ static void UartReceFrameCallBack(struct k_timer *timer_id)
 	rece_len = 0;
 }
 
-void ble_init(void)
+void uart_init(void)
 {
 	gpio_flags_t flag = GPIO_INPUT|GPIO_PULL_UP;
 

@@ -17,8 +17,17 @@
 #include "external_flash.h"
 #include "uart_ble.h"
 #include "settings.h"
+#ifdef CONFIG_IMU_SUPPORT
+#include "lsm6dso.h"
+#endif
+#ifdef CONFIG_GPS_SUPPORT
+#include "gps.h"
+#endif
 #include "pmu.h"
 #include "codetrans.h"
+#ifdef CONFIG_AUDIO_SUPPORT
+#include "audio.h"
+#endif
 #ifdef CONFIG_WATCHDOG
 #include "watchdog.h"
 #endif
@@ -26,39 +35,43 @@
 
 static bool sys_pwron_completed_flag = false;
 
-static void modem_init(void)
-{
-	//nrf_modem_lib_init(NORMAL_MODE);
-	//boot_write_img_confirmed();
-}
+#ifdef CONFIG_IMU_SUPPORT
+K_THREAD_STACK_DEFINE(imu_stack_area,
+              2048);
+static struct k_work_q imu_work_q;
+#endif
 
 void system_init(void)
 {
-	k_sleep(K_MSEC(500));//xb test 2022-03-11 启动时候延迟0.5S,等待其他外设完全启动
-
-	modem_init();
-
 	InitSystemSettings();
 
-#ifdef CONFIG_PPG_SUPPORT
-	//PPG_i2c_off();
-#endif
 	pmu_init();
 	key_init();
 	//flash_init();
 	
-#ifdef CONFIG_PPG_SUPPORT	
-	//PPG_init();
+#ifdef CONFIG_AUDIO_SUPPORT	
+	audio_init();
 #endif
-#ifdef CONFIG_ECG_SUPPORT
-	//ECG_init();
+#ifdef CONFIG_LTE_SUPPORT
+	LTE_init();
 #endif
-	//ble_init();
+#ifdef CONFIG_BLE_SUPPORT
+	BLE_init();
+#endif	
+#ifdef CONFIG_IMU_SUPPORT
+	IMU_init(&imu_work_q);
+#endif
 	//LogInit();
 }
 
 void work_init(void)
 {
+#ifdef CONFIG_IMU_SUPPORT	
+	k_work_queue_start(&imu_work_q, imu_stack_area,
+					K_THREAD_STACK_SIZEOF(imu_stack_area),
+					K_HIGHEST_APPLICATION_THREAD_PRIO,NULL);
+#endif
+
 	if(IS_ENABLED(CONFIG_WATCHDOG))
 	{
 		watchdog_init_and_start(&k_sys_work_q);
@@ -114,19 +127,30 @@ int main(void)
 	{
 		KeyMsgProcess();
 		TimeMsgProcess();
-		PMUMsgProcess();
-	#ifdef CONFIG_PPG_SUPPORT	
-		PPGMsgProcess();
-	#endif
-	#ifdef CONFIG_ECG_SUPPORT
-		ECGMsgProcess();
-	#endif
-		SettingsMsgPorcess();
 		UartMsgProc();
+		PMUMsgProcess();
+		SettingsMsgPorcess();
+	#ifdef CONFIG_WIFI_SUPPORT	
+		WifiMsgProcess();
+	#endif
+	#ifdef CONFIG_GPS_SUPPORT
+		GPSMsgProcess();
+	#endif
+	#ifdef CONFIG_LTE_SUPPORT
+		LteMsgProcess();
+	#endif
+	#ifdef CONFIG_BLE_SUPPORT
+		BleMsgProcess();
+	#endif
+	#ifdef CONFIG_AUDIO_SUPPORT
+		AudioMsgProcess();
+	#endif
 	#ifdef CONFIG_FACTORY_TEST_SUPPORT
 		FactoryTestProccess();
 	#endif
+	#ifdef CONFIG_LOG
 		LogMsgProcess();
+	#endif
 		system_init_completed();
 		k_cpu_idle();
 	}

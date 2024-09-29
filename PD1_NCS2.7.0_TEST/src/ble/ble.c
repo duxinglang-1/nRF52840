@@ -9,6 +9,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/drivers/gpio.h>
 #include <string.h>
+#include "ble.h"
 #include "logger.h"
 
 
