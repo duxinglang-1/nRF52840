@@ -3,7 +3,7 @@ typedef union{
   uint8_t u8bit[6];
 } axis3bit16_t;
 
-#define LSM6DSO_INT1_PIN	9
+#define LSM6DSO_INT1_PIN	1
 #define LSM6DSO_INT2_PIN	10
 #define LSM6DSO_SDA_PIN		11
 #define LSM6DSO_SCL_PIN		12

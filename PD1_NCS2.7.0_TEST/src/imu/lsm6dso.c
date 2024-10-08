@@ -32,8 +32,8 @@
 #define IMU_DEV	""
 #endif
 
-#if DT_NODE_HAS_STATUS(DT_NODELABEL(gpio0), okay)
-#define IMU_PORT DT_NODELABEL(gpio0)
+#if DT_NODE_HAS_STATUS(DT_NODELABEL(gpio1), okay)
+#define IMU_PORT DT_NODELABEL(gpio1)
 #else
 #error "gpio0 devicetree node is disabled"
 #define IMU_PORT	""

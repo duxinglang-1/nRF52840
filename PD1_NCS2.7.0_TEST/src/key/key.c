@@ -45,8 +45,8 @@ static atomic_t my_buttons;
 static sys_slist_t button_handlers;
 
 #ifdef CONFIG_WRIST_CHECK_SUPPORT
-#if DT_NODE_HAS_STATUS(DT_NODELABEL(gpio0), okay)
-#define WEAR_PORT DT_NODELABEL(gpio0)
+#if DT_NODE_HAS_STATUS(DT_NODELABEL(gpio1), okay)
+#define WEAR_PORT DT_NODELABEL(gpio1)
 #else
 #error "gpio0 devicetree node is disabled"
 #define WEAR_PORT	""
@@ -867,7 +867,6 @@ void WearMsgProc(void)
 void wear_init(void)
 {
 	bool rst;
-	int flag = GPIO_INPUT|GPIO_PULL_UP;
 
   	//¶Ë¿Ú³õÊ¼»¯
   	gpio_wear = DEVICE_DT_GET(WEAR_PORT);
@@ -875,7 +874,7 @@ void wear_init(void)
 		return;
 
 	//wear interrupt
-	gpio_pin_configure(gpio_wear, WEAR_PIN, flag);
+	gpio_pin_configure(gpio_wear, WEAR_PIN, GPIO_INPUT|GPIO_PULL_UP);
     gpio_pin_interrupt_configure(gpio_wear, WEAR_PIN,GPIO_INT_DISABLE);
 	gpio_init_callback(&gpio_wear_cb, WearInterruptHandle, BIT(WEAR_PIN));
 	gpio_add_callback(gpio_wear, &gpio_wear_cb);
