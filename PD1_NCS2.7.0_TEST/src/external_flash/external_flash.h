@@ -14,8 +14,8 @@
 #include <zephyr/kernel.h>
 
 //SPIÒý½Å¶¨Òå
-#if DT_NODE_HAS_STATUS(DT_NODELABEL(spi3), okay)
-#define FLASH_DEVICE DT_NODELABEL(spi3)
+#if DT_NODE_HAS_STATUS(DT_NODELABEL(spi2), okay)
+#define FLASH_DEVICE DT_NODELABEL(spi2)
 #else
 //#error "spi3 devicetree node is disabled"
 #define FLASH_DEVICE	""

@@ -14,12 +14,9 @@
 #include <zephyr/drivers/gpio.h>
 #include <nrfx.h>
 #include "sos.h"
-#include "Max20353.h"
-#include "lcd.h"
-#include "screen.h"
+#include "pmu.h"
 #include "settings.h"
 #include "gps.h"
-#include "screen.h"
 #ifdef CONFIG_WIFI_SUPPORT
 #include "esp8266.h"
 #endif
@@ -68,36 +65,16 @@ void SOSStatusUpdate(void)
 		break;
 	
 	case SOS_STATUS_SENT:
-		if(screen_id == SCREEN_ID_SOS)
-		{
-		#ifdef CONFIG_ANIMATION_SUPPORT	
-			AnimaStop();
-		#endif			
-		}
 		sos_state = SOS_STATUS_RECEIVED;
 		break;
 	
 	case SOS_STATUS_RECEIVED:
 		sos_state = SOS_STATUS_IDLE;
-		if(screen_id == SCREEN_ID_SOS)
-		{
-			EnterIdleScreen();
-		}
 		break;
 	
 	case SOS_STATUS_CANCEL:
 		sos_state = SOS_STATUS_IDLE;
-		if(screen_id == SCREEN_ID_SOS)
-		{
-			EnterIdleScreen();
-		}
 		break;
-	}
-	
-	if(screen_id == SCREEN_ID_SOS)
-	{
-		scr_msg[screen_id].para |= SCREEN_EVENT_UPDATE_SOS;
-		scr_msg[screen_id].act = SCREEN_ACTION_UPDATE;
 	}
 	
 	if(sos_state != SOS_STATUS_IDLE)
@@ -319,7 +296,6 @@ void SOSRecLocatNotify(uint8_t *strmsg)
 											#endif
 											};
 	uint8_t strtmp[512] = {0};
-	notify_infor infor = {0};
 
 #ifdef CONFIG_WIFI_SUPPORT
 	k_timer_stop(&sos_wait_wifi_addr_timer);
@@ -327,41 +303,6 @@ void SOSRecLocatNotify(uint8_t *strmsg)
 
 	sos_state = SOS_STATUS_RECEIVED;
 	SOSStatusUpdate();
-	
-	if(IsInIdleScreen())
-	{
-		mmi_chset_convert(
-							MMI_CHSET_UTF8, 
-							MMI_CHSET_UCS2,
-							strmsg,
-							strtmp,
-							sizeof(strtmp));
-
-	#ifdef FONTMAKER_UNICODE_FONT
-		LCD_SetFontSize(FONT_SIZE_20);
-	#else		
-		LCD_SetFontSize(FONT_SIZE_16);
-	#endif
-
-		infor.w = 200;
-		infor.h = 120;
-		infor.x = (LCD_WIDTH-infor.w)/2;
-		infor.y = (LCD_HEIGHT-infor.h)/2;
-
-		infor.align = NOTIFY_ALIGN_CENTER;
-		infor.type = NOTIFY_TYPE_POPUP;
-
-		infor.img_count = 0;
-
-		mmi_ucs2cpy(infor.text, strtitle[global_settings.language][0]);
-		mmi_ucs2cat(infor.text, strtmp);
-		mmi_ucs2cat(infor.text, strtitle[global_settings.language][1]);
-
-		DisplayPopUp(infor);
-
-		lcd_sleep_out = true;
-		vibrate_on(VIB_ONCE, 100, 0);
-	}
 }
 
 void SOSTrigger(void)
@@ -403,12 +344,8 @@ void SOSStart(void)
 
 	SendSosAlarmData();
 
-	lcd_sleep_out = true;
 	sos_state = SOS_STATUS_SENDING;
-	LCD_Set_BL_Mode(LCD_BL_ALWAYS_ON);
 	
-	//EnterSOSScreen();
-
 	if(lte_is_connected())
 		delay = 30;
 	else

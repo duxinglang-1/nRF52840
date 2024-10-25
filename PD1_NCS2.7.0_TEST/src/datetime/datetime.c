@@ -14,10 +14,9 @@
 #include "datetime.h"
 #include "settings.h"
 #include "max20353.h"
-#ifdef CONFIG_PPG_SUPPORT
-#include "max32674.h"
+#ifdef CONFIG_BLE_SUPPORT
+#include "ble.h"
 #endif
-#include "uart_ble.h"
 #include "ucs2.h"
 #include "logger.h"
 
@@ -523,7 +522,7 @@ void UpdateSystemTime(void)
 		}
 	#endif
 
-		pmu_status_update();
+		//pmu_status_update();
 	}
 
 	if((date_time_changed&0x04) != 0)

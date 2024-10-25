@@ -82,5 +82,5 @@ extern void SystemShutDown(void);
 extern void PMUMsgProcess(void);
 extern void GetBatterySocString(uint8_t *str_utc);
 extern void system_power_off(uint8_t flag);
-
+extern void PmuInterruptHandle(void);
 #endif/*__PMU_H__*/

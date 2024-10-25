@@ -3,10 +3,10 @@ typedef union{
   uint8_t u8bit[6];
 } axis3bit16_t;
 
-#define LSM6DSO_INT1_PIN	1
-#define LSM6DSO_INT2_PIN	10
-#define LSM6DSO_SDA_PIN		11
-#define LSM6DSO_SCL_PIN		12
+#define LSM6DSO_INT1_PIN	28
+#define LSM6DSO_INT2_PIN	30
+#define LSM6DSO_SDA_PIN		6
+#define LSM6DSO_SCL_PIN		8
 
 #define TWI_INSTANCE_ID               0
 #define LSM6DSO_I2C_ADD               LSM6DSO_I2C_ADD_L >> 1 //need to shift 1 bit to the right.

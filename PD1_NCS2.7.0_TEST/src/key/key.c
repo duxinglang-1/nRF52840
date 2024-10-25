@@ -15,20 +15,18 @@
 #include <zephyr/drivers/gpio.h>
 #include <nrfx.h>
 #include "key.h"
-#include "Max20353.h"
+#include "pmu.h"
+#include "sos.h"
 #ifdef CONFIG_FACTORY_TEST_SUPPORT
 #include "ft_main.h"
 #endif/*CONFIG_FACTORY_TEST_SUPPORT*/
-#ifdef CONFIG_PPG_SUPPORT
-#include "max32674.h"
-#endif
 #include "settings.h"
 #include "logger.h"
 
 #define KEY_DEBUG
 
-#if DT_NODE_HAS_STATUS(DT_NODELABEL(gpio0), okay)
-#define KEY_PORT DT_NODELABEL(gpio0)
+#if DT_NODE_HAS_STATUS(DT_NODELABEL(gpio1), okay)
+#define KEY_PORT DT_NODELABEL(gpio1)
 #else
 #error "gpio0 devicetree node is disabled"
 #define KEY_PORT	""
@@ -52,7 +50,7 @@ static sys_slist_t button_handlers;
 #define WEAR_PORT	""
 #endif
 
-#define WEAR_PIN	06
+#define WEAR_PIN	10
 
 static bool wear_int_flag = false;
 static bool wear_off_trigger_flag = false;
@@ -63,13 +61,11 @@ static void wear_off_timerout(struct k_timer *timer_id);
 K_TIMER_DEFINE(wear_off_timer, wear_off_timerout, NULL);
 #endif
 
-#define POW			BIT(0)
-#define SOS			BIT(1)
+#define SOS			BIT(0)
 
 static const key_cfg button_pins[] = 
 {
-	{26, ACTIVE_LOW},
-	{15, ACTIVE_LOW},
+	{11, ACTIVE_LOW},
 };
 
 static struct device *button_devs[ARRAY_SIZE(button_pins)];
@@ -976,5 +972,6 @@ void key_init(void)
 	fast_key_init();
 #endif
 
-	SetLeftKeyLongPressHandler(poweroff_confirm);
+	SetKeyHandler(PmuInterruptHandle, KEY_SOS, KEY_EVENT_DOWN);
+	SetKeyHandler(SOSTrigger, KEY_SOS, KEY_EVENT_LONG_PRESS);
 }

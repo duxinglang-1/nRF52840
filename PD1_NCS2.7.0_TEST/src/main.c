@@ -15,7 +15,9 @@
 #include "datetime.h"
 #include "inner_flash.h"
 #include "external_flash.h"
-#include "uart_ble.h"
+#ifdef CONFIG_BLE_SUPPORT
+#include "ble.h"
+#endif
 #include "settings.h"
 #ifdef CONFIG_IMU_SUPPORT
 #include "lsm6dso.h"
@@ -31,6 +33,12 @@
 #ifdef CONFIG_WATCHDOG
 #include "watchdog.h"
 #endif
+#ifdef CONFIG_PRESSURE_SUPPORT
+#include "pressure.h"
+#endif
+#ifdef CONFIG_WIFI_SUPPORT
+#include "esp8266.h"
+#endif/*CONFIG_WIFI_SUPPORT*/
 #include "logger.h"
 
 static bool sys_pwron_completed_flag = false;
@@ -45,10 +53,13 @@ void system_init(void)
 {
 	InitSystemSettings();
 
-	pmu_init();
 	key_init();
+	pmu_init();
 	//flash_init();
 	
+#ifdef CONFIG_GPS_SUPPORT
+	GPS_init();
+#endif
 #ifdef CONFIG_AUDIO_SUPPORT	
 	audio_init();
 #endif
@@ -58,8 +69,14 @@ void system_init(void)
 #ifdef CONFIG_BLE_SUPPORT
 	BLE_init();
 #endif	
+#ifdef CONFIG_WIFI_SUPPORT
+	wifi_init();
+#endif
 #ifdef CONFIG_IMU_SUPPORT
 	IMU_init(&imu_work_q);
+#endif
+#ifdef CONFIG_PRESSURE_SUPPORT
+	pressure_init();
 #endif
 	//LogInit();
 }
@@ -129,7 +146,14 @@ int main(void)
 		TimeMsgProcess();
 		UartMsgProc();
 		PMUMsgProcess();
+	#ifdef CONFIG_IMU_SUPPORT	
+		IMUMsgProcess();
+	#ifdef CONFIG_FALL_DETECT_SUPPORT
+		FallMsgProcess();
+	#endif
+	#endif
 		SettingsMsgPorcess();
+		SOSMsgProc();
 	#ifdef CONFIG_WIFI_SUPPORT	
 		WifiMsgProcess();
 	#endif
@@ -144,6 +168,9 @@ int main(void)
 	#endif
 	#ifdef CONFIG_AUDIO_SUPPORT
 		AudioMsgProcess();
+	#endif
+	#ifdef CONFIG_PRESSURE_SUPPORT
+		PressureMsgProcess();
 	#endif
 	#ifdef CONFIG_FACTORY_TEST_SUPPORT
 		FactoryTestProccess();

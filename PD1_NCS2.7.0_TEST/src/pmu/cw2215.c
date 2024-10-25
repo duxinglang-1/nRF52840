@@ -23,14 +23,14 @@
 
 //#define SHOW_LOG_IN_SCREEN
 
-#if DT_NODE_HAS_STATUS(DT_NODELABEL(gpio1), okay)
-#define PMU_PORT DT_NODELABEL(gpio1)
+#if DT_NODE_HAS_STATUS(DT_NODELABEL(gpio0), okay)
+#define PMU_PORT DT_NODELABEL(gpio0)
 #else
 #error "gpio0 devicetree node is disabled"
 #define PMU_PORT	""
 #endif
 
-#define PMU_ALRTB		8
+#define PMU_ALRTB		12
 #define PMU_EINT		9
 
 static uint8_t HardwareID;
@@ -743,11 +743,13 @@ void pmu_init(void)
 	}
 
 	//charger interrupt
+#if 0 //xb add 2024-10-23	充电中断与SOS按键共用一个GPIO
 	gpio_pin_configure(gpio_pmu, PMU_EINT, GPIO_INPUT|GPIO_PULL_UP);
 	gpio_pin_interrupt_configure(gpio_pmu, PMU_EINT, GPIO_INT_DISABLE);
 	gpio_init_callback(&gpio_cb1, PmuInterruptHandle, BIT(PMU_EINT));
 	gpio_add_callback(gpio_pmu, &gpio_cb1);
 	gpio_pin_interrupt_configure(gpio_pmu, PMU_EINT, GPIO_INT_ENABLE|GPIO_INT_EDGE_FALLING);
+#endif
 
 	//alert interrupt
 	gpio_pin_configure(gpio_pmu, PMU_ALRTB, GPIO_INPUT|GPIO_PULL_UP);

@@ -46,7 +46,6 @@ ft_key_t ft_key[KEY_MAX] = {0};
 
 const ft_key_t FT_KEY_INF[KEY_MAX] = 
 {
-	{KEY_POWER, FT_KEY_NONE},
 	{KEY_SOS,	FT_KEY_NONE},
 };
 
@@ -56,13 +55,8 @@ const ft_menu_t FT_MENU_KEY =
 {
 	FT_KEY,
 	0,
-	2,
+	1,
 	{
-		//POWER¼ü
-		{
-			{0x0050,0x004F,0x0057,0x0045,0x0052,0x952E,0x0000},
-			FTMenuKeyDumpProc,
-		},
 		//SOS¼ü
 		{
 			{0x0053,0x004F,0x0053,0x952E,0x0000},
@@ -86,35 +80,6 @@ static void FTMenuKeySle1Hander(void)
 static void FTMenuKeySle2Hander(void)
 {
 	ExitFTMenuKey();
-}
-
-static void FTMenuKeyPowerDownProc(void)
-{
-	uint8_t i;
-	
-	for(i=0;i<ARRAY_SIZE(ft_key);i++)
-	{
-		if((ft_key[i].id == KEY_POWER) && (ft_key[i].status == FT_KEY_NONE))
-		{
-			ft_key[i].status = FT_KEY_DOWN;
-			break;
-		}	
-	}
-}
-
-static void FTMenuKeyPowerUpProc(void)
-{
-	uint8_t i;
-	
-	for(i=0;i<ARRAY_SIZE(ft_key);i++)
-	{
-		if((ft_key[i].id == KEY_POWER) && (ft_key[i].status == FT_KEY_DOWN))
-		{
-			ft_key[i].status = FT_KEY_UP;
-			scr_msg[SCREEN_ID_FACTORY_TEST].act = SCREEN_ACTION_UPDATE;
-			break;
-		}	
-	}
 }
 
 static void FTMenuKeySosDownProc(void)
@@ -246,8 +211,6 @@ static void FTMenuKeyShow(void)
 	LCD_ShowUniString(x, y, sle_str[1]);
 
 	ClearAllKeyHandler();
-	SetKeyHandler(FTMenuKeyPowerDownProc, KEY_POWER, KEY_EVENT_DOWN);
-	SetKeyHandler(FTMenuKeyPowerUpProc, KEY_POWER, KEY_EVENT_UP);
 	SetKeyHandler(FTMenuKeySosDownProc, KEY_SOS, KEY_EVENT_DOWN);
 	SetKeyHandler(FTMenuKeySosUpProc, KEY_SOS, KEY_EVENT_UP);
 	

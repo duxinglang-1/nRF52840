@@ -16,7 +16,7 @@
 #include "gps.h"
 #endif
 #include "external_flash.h"
-#include "uart_ble.h"
+#include "ble.h"
 #ifdef CONFIG_WIFI_SUPPORT
 #include "esp8266.h"
 #endif

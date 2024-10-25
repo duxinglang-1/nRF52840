@@ -10,10 +10,8 @@
 #include "lsm6dso.h"
 #include "lsm6dso_reg.h"
 #include "algorithm.h"
-#include "lcd.h"
 #include "gps.h"
 #include "settings.h"
-#include "screen.h"
 #include "external_flash.h"
 #ifdef CONFIG_SLEEP_SUPPORT
 #include "sleep.h"
@@ -25,15 +23,15 @@
 
 //#define IMU_DEBUG
 
-#if DT_NODE_HAS_STATUS(DT_NODELABEL(i2c1), okay)
-#define IMU_DEV DT_NODELABEL(i2c1)
+#if DT_NODE_HAS_STATUS(DT_NODELABEL(i2c0), okay)
+#define IMU_DEV DT_NODELABEL(i2c0)
 #else
 #error "i2c1 devicetree node is disabled"
 #define IMU_DEV	""
 #endif
 
-#if DT_NODE_HAS_STATUS(DT_NODELABEL(gpio1), okay)
-#define IMU_PORT DT_NODELABEL(gpio1)
+#if DT_NODE_HAS_STATUS(DT_NODELABEL(gpio0), okay)
+#define IMU_PORT DT_NODELABEL(gpio0)
 #else
 #error "gpio0 devicetree node is disabled"
 #define IMU_PORT	""
@@ -579,11 +577,6 @@ void IMUMsgProcess(void)
 		#ifdef IMU_DEBUG
 			LOGD("tilt trigger!");
 		#endif
-			if(lcd_is_sleeping && global_settings.wake_screen_by_wrist)
-			{
-				sleep_out_by_wrist = true;
-				lcd_sleep_out = true;
-			}
 		}
 	}
 }

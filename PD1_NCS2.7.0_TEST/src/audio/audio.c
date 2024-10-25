@@ -49,8 +49,8 @@ static uint32_t const * volatile mp_block_to_check = NULL;
 #define AUDIO_PORT	""
 #endif
 
-#define WTN_DATA	13      //接 13脚
-#define WTN_BUSY	14		//busy脚,音频播放之后由低变高
+#define WTN_DATA	20
+#define WTN_BUSY	21
 
 static bool audio_trige_flag = false;
 
@@ -191,6 +191,8 @@ void audio_init(void)
 	gpio_flags_t flag = GPIO_INPUT|GPIO_PULL_UP;
 	
 	gpio_audio = DEVICE_DT_GET(AUDIO_PORT);
+	if(gpio_audio == NULL)
+		return;
 
 	gpio_pin_configure(gpio_audio, WTN_DATA, GPIO_OUTPUT);
 	gpio_pin_set(gpio_audio, WTN_DATA, 1);
