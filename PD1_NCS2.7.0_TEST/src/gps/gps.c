@@ -6,15 +6,23 @@
 #include <stdio.h>
 #include <string.h>
 #include <zephyr/kernel.h>
-#include <date_time.h>
-#include <logger.h>
-#include "screen.h"
+#include <zephyr/drivers/gpio.h>
 #include "gps.h"
+#include "uart.h"
+#include "logger.h"
 
-//#define GPS_DEBUG
+#define GPS_DEBUG
 
-static struct k_work_q *app_work_q;
-static struct k_work gps_data_get_work;
+#define GPS_EN_PIN		9
+#define GPS_RST_PIN		10
+
+#if DT_NODE_HAS_STATUS(DT_NODELABEL(gpio0), okay)
+#define GPS_PORT DT_NODELABEL(gpio0)
+#else
+#error "gpio0 devicetree node is disabled"
+#define GPS_PORT	""
+#endif
+
 static void gps_data_get_work_fn(struct k_work *item);
 
 static void APP_Ask_GPS_Data_timerout(struct k_timer *timer_id);
@@ -41,6 +49,8 @@ bool gps_send_data_flag = false;
 uint8_t gps_test_info[256] = {0};
 
 static const char update_indicator[] = {'\\', '|', '/', '-'};
+
+static struct device *gpio_gps = NULL;
 
 static uint8_t last_pvt[512] = {0};
 
@@ -277,6 +287,11 @@ static void gps_data_get_work_fn(struct k_work *item)
 #endif	
 }
 
+void gps_receive_data_handle(uint8_t *data, uint32_t data_len)
+{
+
+}
+
 bool APP_GPS_data_send(bool fix_flag)
 {
 	bool ret = false;
@@ -368,6 +383,37 @@ bool gps_is_working(void)
 	return gps_is_on;
 }
 
+/*============================================================================
+* Function Name  : gps_enable
+* Description    : AT6558R_EN使能，高电平有效
+* Input          : None
+* Output         : None
+* Return         : None
+* CALL           : 可被外部调用
+==============================================================================*/
+void gps_enable(void)
+{
+	gpio_pin_set(gpio_gps, GPS_RST_PIN, 0);
+	k_sleep(K_MSEC(20));
+	gpio_pin_set(gpio_gps, GPS_RST_PIN, 1);
+	
+	gpio_pin_set(gpio_gps, GPS_EN_PIN, 1);
+	k_sleep(K_MSEC(20));
+}
+
+/*============================================================================
+* Function Name  : gps_disable
+* Description    : AT6558R_EN使能禁止，低电平有效
+* Input          : None
+* Output         : None
+* Return         : None
+* CALL           : 可被外部调用
+==============================================================================*/
+void gps_disable(void)
+{
+	gpio_pin_set(gpio_gps, GPS_EN_PIN, 0);
+}
+
 void gps_turn_off(void)
 {
 #ifdef GPS_DEBUG
@@ -418,8 +464,8 @@ void gps_on(void)
 
 void gps_test_update(void)
 {
-	if(screen_id == SCREEN_ID_GPS_TEST)
-		scr_msg[screen_id].act = SCREEN_ACTION_UPDATE;
+	//if(screen_id == SCREEN_ID_GPS_TEST)
+	//	scr_msg[screen_id].act = SCREEN_ACTION_UPDATE;
 }
 
 void MenuStartGPS(void)
@@ -446,10 +492,28 @@ void FTStopGPS(void)
 }
 #endif
 
-void GPS_init(struct k_work_q *work_q)
+void GPS_init(void)
 {
-	app_work_q = work_q;
-	gps_work_init();
+	uart_gps_init();
+	
+	gpio_gps = DEVICE_DT_GET(GPS_PORT);
+	if(!gpio_gps)
+	{
+	#ifdef WIFI_DEBUG
+		LOGD("Could not get gpio!");
+	#endif
+		return;
+	}
+
+	gpio_pin_configure(gpio_gps, GPS_RST_PIN, GPIO_OUTPUT);
+	gpio_pin_configure(gpio_gps, GPS_EN_PIN, GPIO_OUTPUT);
+
+	gpio_pin_set(gpio_gps, GPS_RST_PIN, 0);
+	k_sleep(K_MSEC(20));
+	gpio_pin_set(gpio_gps, GPS_RST_PIN, 1);
+	
+	gpio_pin_set(gpio_gps, GPS_EN_PIN, 1);
+	k_sleep(K_MSEC(20));
 }
 
 void GPSTestInit(void)
