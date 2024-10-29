@@ -155,7 +155,7 @@ void sos_get_wifi_data_reply(wifi_infor wifi_data)
 }
 #endif
 
-void sos_get_gps_data_reply(bool flag, uint8_t *gps_data)
+void sos_get_gps_data_reply(bool flag, gnss_pvt_data_frame_t gps_data)
 {
 	uint8_t reply[256] = {0};
 	uint8_t tmpbuf[8] = {0};
@@ -181,7 +181,6 @@ void sos_get_gps_data_reply(bool flag, uint8_t *gps_data)
 	}
 	else
 	{
-	#if 0	//xb test 2024-09-29
 		//latitude
 		if(gps_data.latitude < 0)
 		{
@@ -243,7 +242,7 @@ void sos_get_gps_data_reply(bool flag, uint8_t *gps_data)
 
 		//semicolon
 		strcat(reply, ";");
-	#endif
+
 		LteSendSosGpsData(reply, strlen(reply));
 	}
 }
