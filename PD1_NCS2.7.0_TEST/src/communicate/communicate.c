@@ -78,7 +78,7 @@ void location_get_wifi_data_reply(wifi_infor wifi_data)
  *  Nothing
  *****************************************************************************/
 #ifdef CONFIG_GPS_SUPPORT
-void location_get_gps_data_reply(bool flag, void *gps_data)
+void location_get_gps_data_reply(bool flag, gnss_pvt_data_frame_t gps_data)
 {
 	uint8_t reply[128] = {0};
 	uint8_t tmpbuf[8] = {0};
