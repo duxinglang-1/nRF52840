@@ -13,7 +13,7 @@
 #include <stdint.h>
 #include <zephyr/kernel.h>
 
-#define LOG_BUFF_SIZE (1024)
+#define LOG_BUFF_SIZE (2048)
 /* 无自动添加函数名 */
 #define LOGC(fmt, args...) LOGDD("", fmt, ##args)
 /* 有自动添加函数名 */

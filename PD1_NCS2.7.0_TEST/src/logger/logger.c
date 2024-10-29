@@ -29,6 +29,7 @@ typedef struct
 
 static bool log_save_flag = false;
 
+static uint8_t buf[LOG_BUFF_SIZE] = {0};
 static uint8_t logbuf[SPIFlash_SECTOR_SIZE] = {0};
 static uint32_t log_sent_count = 0;
 
@@ -44,10 +45,10 @@ void LOGDD(const char *fun_name, const char *fmt, ...)
 	uint16_t str_len = 0;
 	int n = 0;
 	uint32_t timemap=0;
-	uint8_t buf[LOG_BUFF_SIZE] = {0};
 	va_list args;
 
 #ifdef TEST_DEBUG
+	memset(buf, 0x00, sizeof(buf));
 	timemap = (k_uptime_get()%1000);
 	va_start(args, fmt);
 	sprintf(buf, "[%04d-%02d-%02d %02d:%02d:%02d:%03d]..%s>>", 
@@ -118,7 +119,6 @@ void log_write_data_to_flash(uint8_t *data, uint32_t len)
 bool SendLogData(void)
 {
 	uint32_t i;
-	static uint8_t tmpbuf[LOG_BUFF_SIZE] = {0};
 	static uint32_t j=0;
 	static uint32_t addr=LOG_DATA_BEGIN_ADDR;
 
@@ -131,6 +131,7 @@ bool SendLogData(void)
 
 	if(addr < LOG_DATA_END_ADDR)
 	{
+		memset(buf, 0x00, sizeof(buf));
 		SpiFlash_Read(logbuf, addr, SPIFlash_SECTOR_SIZE);
 		for(i=0;i<SPIFlash_SECTOR_SIZE;)
 		{
@@ -139,12 +140,12 @@ bool SendLogData(void)
 			tmpdata = logbuf[i++];
 			if(tmpdata > 0x00 && tmpdata < 0x7f)
 			{
-				tmpbuf[j++] = tmpdata;
-				if(tmpbuf[j-1] == '\n')
+				buf[j++] = tmpdata;
+				if(buf[j-1] == '\n')
 				{
-					tmpbuf[j-1] = 0x00;
+					buf[j-1] = 0x00;
 					j = 0;
-					NBSendLogData(tmpbuf, strlen(tmpbuf));
+					NBSendLogData(buf, strlen(buf));
 					log_sent_count++;
 					if(log_sent_count >= inforbuf.count)
 						return false;
@@ -153,11 +154,11 @@ bool SendLogData(void)
 				}
 				else
 				{
-					if(j == (sizeof(tmpbuf)-1))
+					if(j == (sizeof(buf)-1))
 					{
-						tmpbuf[j] = 0x00;
+						buf[j] = 0x00;
 						j=0;
-						NBSendLogData(tmpbuf, strlen(tmpbuf));
+						NBSendLogData(buf, strlen(buf));
 						log_sent_count++;
 						if(log_sent_count >= inforbuf.count)
 							return false;
@@ -178,14 +179,13 @@ bool SendLogData(void)
 void log_read_from_flash(void)
 {
 	uint32_t i,j=0,k=0,addr = LOG_DATA_BEGIN_ADDR;
-	uint8_t buf[LOG_BUFF_SIZE] = {0};
 
 #ifdef TEST_DEBUG
 	if((inforbuf.count == 0) || (inforbuf.count == 0xffffffff))
 		return;
 
-	LOG_INF("log count:%d", inforbuf.count);
-
+	memset(buf, 0x00, sizeof(buf));
+	
 	while(addr < LOG_DATA_END_ADDR)
 	{
 		SpiFlash_Read(logbuf, addr, SPIFlash_SECTOR_SIZE);
@@ -235,10 +235,11 @@ void LOGDM(const char *fun_name, const char *fmt, ...)
 	uint16_t str_len = 0;
 	int n = 0;
 	uint32_t timemap=0;
-	uint8_t buf[LOG_BUFF_SIZE] = {0};
 	va_list args;
 
 #ifdef TEST_DEBUG
+	memset(buf, 0x00, sizeof(buf));
+
 	timemap = (k_uptime_get()%1000);
 	va_start(args, fmt);
 	sprintf(buf, "[%04d-%02d-%02d %02d:%02d:%02d:%03d]..%s>>", 
