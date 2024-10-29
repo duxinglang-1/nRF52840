@@ -315,9 +315,9 @@ void wifi_turn_off(void)
 #ifdef WIFI_DEBUG
 	LOGD("begin");
 #endif
-	wifi_disable();
 
 	wifi_is_on = false;
+	wifi_disable();
 	UartWifiOff();
 }
 

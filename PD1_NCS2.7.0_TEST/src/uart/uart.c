@@ -18,7 +18,7 @@
 #include "Uart.h"
 #include "inner_flash.h"
 
-#define UART_DEBUG
+//#define UART_DEBUG
 
 #if DT_NODE_HAS_STATUS(DT_NODELABEL(uart0), okay)
 #define LTE_DEV DT_NODELABEL(uart0)
@@ -125,14 +125,52 @@ static void UartGpsSleepInCallBack(struct k_timer *timer_id);
 K_TIMER_DEFINE(uart_gps_sleep_in_timer, UartGpsSleepInCallBack, NULL);
 #endif
 
+void UartSetGpsBaudRate(uint32_t baudrate)
+{
+	struct uart_config uart_cfg;
+
+	uart_config_get(uart_gps, &uart_cfg);
+	uart_cfg.baudrate = baudrate;
+	uart_configure(uart_gps, &uart_cfg);
+}
+
+void UartSetLteBaudRate(uint32_t baudrate)
+{
+	int ret;
+	struct uart_config uart_cfg;
+
+	uart_config_get(uart_lte, &uart_cfg);
+	uart_cfg.baudrate = baudrate;
+	uart_configure(uart_lte, &uart_cfg);
+}
+
 void UartSwitchToGps(void)
 {
+#ifdef CONFIG_PM_DEVICE	
+	if(k_timer_remaining_get(&uart_gps_sleep_in_timer) > 0)
+		k_timer_stop(&uart_gps_sleep_in_timer);
+
+	uart_sleep_out(uart_gps);
+#endif
+
+	//ZKW GNSS defaults to a baud rate of 9600
+	UartSetGpsBaudRate(9600);
+
 	gpio_pin_set(gpio_ctr, GPS_WIFI_SWITCH_PIN, UART_DATA_GPS);
 	uart_is_gps_data = true;
 }
 
 void UartSwitchToWifi(void)
 {
+#ifdef CONFIG_PM_DEVICE	
+	if(k_timer_remaining_get(&uart_gps_sleep_in_timer) > 0)
+		k_timer_stop(&uart_gps_sleep_in_timer);
+
+	uart_sleep_out(uart_gps);
+#endif
+
+	UartSetGpsBaudRate(115200);
+
 	gpio_pin_set(gpio_ctr, GPS_WIFI_SWITCH_PIN, UART_DATA_WIFI);
 	uart_is_gps_data = false;
 }
@@ -666,7 +704,7 @@ void UartGpsOff(void)
 	}
 
 #ifdef CONFIG_PM_DEVICE
-	k_timer_start(&uart_gps_sleep_in_timer, K_SECONDS(UART_GPS_WAKE_HOLD_TIME_SEC), K_NO_WAIT);
+	uart_sleep_in(uart_gps);
 #endif
 }
 
@@ -680,7 +718,7 @@ void UartWifiOff(void)
 	}
 	
 #ifdef CONFIG_PM_DEVICE
-	k_timer_start(&uart_gps_sleep_in_timer, K_SECONDS(UART_GPS_WAKE_HOLD_TIME_SEC), K_NO_WAIT);
+	uart_sleep_in(uart_gps);
 #endif
 
 }
