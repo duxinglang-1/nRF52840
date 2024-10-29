@@ -15,6 +15,9 @@
 #include "Settings.h"
 #include "pmu.h"
 #include "inner_flash.h"
+#ifdef CONFIG_GPS_SUPPORT
+#include "gps.h"
+#endif
 #include "logger.h"
 
 
@@ -814,7 +817,7 @@ void APP_get_location_data(uint8_t *buf, uint32_t len)
 #endif	
 }
 
-void APP_get_gps_data_reply(bool flag, void *gps_data)
+void APP_get_gps_data_reply(bool flag, gnss_pvt_data_frame_t gps_data)
 {
 	uint8_t tmpgps;
 	uint8_t reply[128] = {0};
@@ -838,7 +841,6 @@ void APP_get_gps_data_reply(bool flag, void *gps_data)
 	//control
 	reply[reply_len++] = 0x00;
 
-#if 0	//xb test 2024-09-29	
 	//UTC data&time
 	//year
 	reply[reply_len++] = gps_data.datetime.year>>8;
@@ -898,7 +900,6 @@ void APP_get_gps_data_reply(bool flag, void *gps_data)
 	tmp1 = tmp1%100;
 	//degree dot5~6
 	reply[reply_len++] = (uint8_t)(tmp1);
-#endif
 					
 	//CRC
 	reply[reply_len++] = 0x00;
