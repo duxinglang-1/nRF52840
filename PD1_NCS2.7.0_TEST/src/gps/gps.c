@@ -568,7 +568,7 @@ static void print_fix_data(gnss_pvt_data_frame_t *pvt_data)
 void gps_receive_data_handle(uint8_t *data, uint32_t data_len)
 {
 #ifdef GPS_DEBUG
-	//LOGD("len:%d, data:%s", data_len, data);
+	LOGD("len:%d, data:%s", data_len, data);
 #endif
 
 	gnss_data_analysis(data, data_len);

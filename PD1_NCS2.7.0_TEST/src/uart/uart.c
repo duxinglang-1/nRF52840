@@ -383,7 +383,7 @@ void GpsReceData(uint8_t *data, uint32_t datalen)
 	int ret;
 
 	ret = add_data_into_cache(&uart_gps_rece_cache, data, datalen, DATA_TRANSFER);
-	UartGpsReceDataStart();
+	GpsReceDataStart();
 }
 
 static void uart_gps_cb(struct device *x)
@@ -669,7 +669,8 @@ void UartMsgProc(void)
 	
 	if(uart_lte_rece_frame_flag)
 	{
-		uart_receive_data_handle(uart_lte, lte_rx_buf, lte_rece_len);
+		LteReceData(lte_rx_buf, lte_rece_len);
+		memset(lte_rx_buf, 0, sizeof(lte_rx_buf));
 		lte_rece_len = 0;
 		uart_lte_rece_frame_flag = false;
 	}
@@ -688,7 +689,8 @@ void UartMsgProc(void)
 	
 	if(uart_gps_rece_frame_flag)
 	{
-		uart_receive_data_handle(uart_gps, gps_rx_buf, gps_rece_len);
+		GpsReceData(gps_rx_buf, gps_rece_len);
+		memset(gps_rx_buf, 0, sizeof(gps_rx_buf));
 		gps_rece_len = 0;
 		uart_gps_rece_frame_flag = false;
 	}
