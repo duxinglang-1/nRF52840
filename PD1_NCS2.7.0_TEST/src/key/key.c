@@ -23,7 +23,7 @@
 #include "settings.h"
 #include "logger.h"
 
-#define KEY_DEBUG
+//#define KEY_DEBUG
 
 #if DT_NODE_HAS_STATUS(DT_NODELABEL(gpio1), okay)
 #define KEY_PORT DT_NODELABEL(gpio1)
