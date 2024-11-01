@@ -198,6 +198,7 @@ static void uart_receive_data_handle(struct device *dev, uint8_t *data, uint32_t
 	#ifdef UART_DEBUG
 		LOGD("uart for lte!");
 	#endif
+		lte_receive_data_handle(data, datalen);
 	}
 	else if(dev == uart_gps)
 	{
@@ -544,6 +545,45 @@ static void UartGpsReceFrameCallBack(struct k_timer *timer_id)
 	uart_gps_rece_frame_flag = true;
 }
 
+void UartGpsOff(void)
+{
+	if(uart_is_gps_data)
+	{
+		if(k_timer_remaining_get(&uart_gps_send_data_timer) > 0)
+			k_timer_stop(&uart_gps_send_data_timer);
+		delete_all_from_cache(&uart_gps_send_cache);
+	}
+
+#ifdef CONFIG_PM_DEVICE
+	uart_sleep_in(uart_gps);
+#endif
+}
+
+void UartWifiOff(void)
+{
+	if(!uart_is_gps_data)
+	{
+		if(k_timer_remaining_get(&uart_gps_send_data_timer) > 0)
+			k_timer_stop(&uart_gps_send_data_timer);
+		delete_all_from_cache(&uart_gps_send_cache);
+	}
+	
+#ifdef CONFIG_PM_DEVICE
+	uart_sleep_in(uart_gps);
+#endif
+}
+
+void UartLteOff(void)
+{
+	if(k_timer_remaining_get(&uart_lte_send_data_timer) > 0)
+		k_timer_stop(&uart_lte_send_data_timer);
+	delete_all_from_cache(&uart_lte_send_cache);
+	
+#ifdef CONFIG_PM_DEVICE
+	uart_sleep_in(uart_lte);
+#endif
+}
+
 void uart_lte_init(void)
 {
 	gpio_flags_t flag = GPIO_INPUT|GPIO_PULL_UP;
@@ -694,33 +734,4 @@ void UartMsgProc(void)
 		gps_rece_len = 0;
 		uart_gps_rece_frame_flag = false;
 	}
-}
-
-void UartGpsOff(void)
-{
-	if(uart_is_gps_data)
-	{
-		if(k_timer_remaining_get(&uart_gps_send_data_timer) > 0)
-			k_timer_stop(&uart_gps_send_data_timer);
-		delete_all_from_cache(&uart_gps_send_cache);
-	}
-
-#ifdef CONFIG_PM_DEVICE
-	uart_sleep_in(uart_gps);
-#endif
-}
-
-void UartWifiOff(void)
-{
-	if(!uart_is_gps_data)
-	{
-		if(k_timer_remaining_get(&uart_gps_send_data_timer) > 0)
-			k_timer_stop(&uart_gps_send_data_timer);
-		delete_all_from_cache(&uart_gps_send_cache);
-	}
-	
-#ifdef CONFIG_PM_DEVICE
-	uart_sleep_in(uart_gps);
-#endif
-
 }
