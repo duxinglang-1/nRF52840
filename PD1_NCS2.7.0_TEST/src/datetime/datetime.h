@@ -44,7 +44,6 @@ extern void IdleShowSystemDateTime(void);
 extern void StartSystemDateTime(void);
 extern void StopSystemDateTime(void);
 extern void UpdateSystemTime(void);
-extern void RedrawSystemTime(void);
 extern void TimeIncrease(sys_date_timer_t *date, uint32_t minutes);
 extern void TimeDecrease(sys_date_timer_t *date, uint32_t minutes);
 extern void GetSystemTimeSecString(uint8_t *str_utc);
