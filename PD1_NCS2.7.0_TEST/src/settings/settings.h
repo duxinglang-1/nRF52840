@@ -138,7 +138,7 @@ typedef struct
 	MENU_ID id;
 	uint8_t index;
 	uint8_t count;
-	uint16_t name[LANGUAGE_MAX][MENU_MAX_COUNT][MENU_NAME_MAX];;
+	uint16_t name[LANGUAGE_MAX][MENU_MAX_COUNT][MENU_NAME_MAX];
 	menu_handler sel_handler[MENU_MAX_COUNT];
 	menu_handler pg_handler[4];
 }settings_menu_t;
@@ -172,11 +172,13 @@ typedef struct
 typedef struct
 {
 	SETTINGS_STATUS flag;
+	bool temp_is_on;				//temp
 	bool hr_is_on;					//heart rate
-	bool bp_is_on;					//blood pressure
-	bool bo_is_on;					//blood oxygen
+	bool bpt_is_on;					//blood pressure
+	bool spo2_is_on;				//blood oxygen
 	bool wake_screen_by_wrist;
 	bool wrist_off_check;
+	bool fall_check;		
 	uint8_t location_type;	//1:only wifi,2:only gps,3:wifi+gps,4:gps+wifi
 	uint16_t target_steps;
 	uint32_t health_interval;
