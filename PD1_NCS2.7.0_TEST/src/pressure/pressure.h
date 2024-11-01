@@ -15,7 +15,7 @@
 #include <math.h>
 #include "datetime.h"
 
-#define PRESSURE_DEBUG
+//#define PRESSURE_DEBUG
 
 //sensor mode
 #define PRESSURE_DPS368
