@@ -15,19 +15,20 @@
 #include "lte.h"
 #include "logger.h"
 
-#define LTE_DEBUG
+//#define LTE_DEBUG
 
 static bool lte_connect_ok_flag = true;
 static bool power_on_data_flag = true;
 
 static bool lte_connected = false;
-static bool mqtt_connected = false;
+static LTE_MQTT_STATUS mqtt_connected = LTE_MQTT_CLOSED;
 
 static bool lte_get_infor_flag = false;
 static bool lte_get_ip_flag = false;
 static bool lte_get_rsrp_flag = false;
 static bool lte_turn_off_flag = false;
 static bool lte_net_link_flag = false;
+static bool lte_mqtt_discon_flag = false;
 static bool lte_mqtt_link_flag = false;
 static bool lte_mqtt_send_flag = false;
 
@@ -73,6 +74,8 @@ static void lte_turn_off_timerout(struct k_timer *timer_id);
 K_TIMER_DEFINE(lte_turn_off_timer, lte_turn_off_timerout, NULL);
 static void lte_net_link_timerout(struct k_timer *timer_id);
 K_TIMER_DEFINE(lte_net_link_timer, lte_net_link_timerout, NULL);
+static void lte_mqtt_disconnect_timerout(struct k_timer *timer_id);
+K_TIMER_DEFINE(lte_mqtt_discon_timer, lte_mqtt_disconnect_timerout, NULL);
 static void lte_mqtt_link_timerout(struct k_timer *timer_id);
 K_TIMER_DEFINE(lte_mqtt_link_timer, lte_mqtt_link_timerout, NULL);
 static void lte_mqtt_Send_timeout(struct k_timer *timer_id);
@@ -102,6 +105,11 @@ static void lte_get_rsrp_timerout(struct k_timer *timer_id)
 static void lte_net_link_timerout(struct k_timer *timer_id)
 {
 	lte_net_link_flag = true;
+}
+
+static void lte_mqtt_disconnect_timerout(struct k_timer *timer_id)
+{
+	lte_mqtt_discon_flag = true;
 }
 
 static void lte_mqtt_link_timerout(struct k_timer *timer_id)
@@ -213,6 +221,8 @@ void lte_mqtt_open(void)
 {
 	uint8_t cmdbuf[256] = {0};
 
+	//Turn off reshow
+	LteSendData(LTE_SNS521S_SET_CMD_RESHOW_OFF, strlen(LTE_SNS521S_SET_CMD_RESHOW_OFF));
 	//AT+ECMTOPEN=<tcpconnectID>,"<host_name>",<port>
 	sprintf(cmdbuf, "%s=0,\"%s\",%d\r\n", LTE_SNS521S_SET_MQTT_OPEN, broker_hostname, broker_port);
 	LteSendData(cmdbuf, strlen(cmdbuf));
@@ -239,6 +249,11 @@ void lte_mqtt_connect(void)
 void lte_mqtt_disconnect(void)
 {
 	uint8_t cmdbuf[256] = {0};
+
+	if(k_timer_remaining_get(&lte_mqtt_discon_timer) > 0)
+		k_timer_stop(&lte_mqtt_discon_timer);
+	if(k_timer_remaining_get(&lte_mqtt_link_timer) > 0)
+		k_timer_stop(&lte_mqtt_link_timer);
 	
 	//AT+ECMTDISC=<tcpconnectID>
 	sprintf(cmdbuf, "%s=0\r\n", LTE_SNS521S_SET_MQTT_DISCONNECT);
@@ -250,7 +265,7 @@ void lte_mqtt_subscribe(void)
 	uint8_t cmdbuf[256] = {0};
 	
 	//AT+ECMTSUB=<tcpconnectID>,<msgID>,"<topic>",<qos>
-	sprintf(cmdbuf, "%s=0,%d,\"%s\",1\r\n", LTE_SNS521S_SET_MQTT_SUB, mqtt_msg_id++, CONFIG_MQTT_SUB_TOPIC);
+	sprintf(cmdbuf, "%s=0,%d,\"%s%s\",1\r\n", LTE_SNS521S_SET_MQTT_SUB, mqtt_msg_id++, CONFIG_MQTT_SUB_TOPIC, g_imei);
 	LteSendData(cmdbuf, strlen(cmdbuf));
 }
 
@@ -268,7 +283,7 @@ void lte_mqtt_publish(uint8_t *data, uint32_t data_len)
 	uint8_t cmdbuf[256] = {0};
 		
 	//AT+ECMTPUB=<tcpconnectID>,<msgID>,<qos>,<retain>,"<topic>","<payload>"
-	sprintf(cmdbuf, "%s=0,%d,2,0,\"%s\",\"%s\"\r\n", LTE_SNS521S_SET_MQTT_PUBLISH, mqtt_msg_id++, CONFIG_MQTT_SUB_TOPIC, data);
+	sprintf(cmdbuf, "%s=0,%d,2,0,\"%s\",\"%s\"\r\n", LTE_SNS521S_SET_MQTT_PUBLISH, mqtt_msg_id++, CONFIG_MQTT_PUB_TOPIC, data);
 	LteSendData(cmdbuf, strlen(cmdbuf));
 }
 
@@ -284,10 +299,19 @@ void lte_mqtt_link(void)
 	}
 	else
 	{
-		lte_mqtt_open();
+		switch(mqtt_connected)
+		{
+		case LTE_MQTT_CLOSED:
+		case LTE_MQTT_OPENED:
+			lte_mqtt_open();
+			break;
+
+		case LTE_MQTT_CONNECTED:
+			break;
+		}
 	}
 	
-	k_timer_start(&lte_mqtt_link_timer, K_SECONDS(2*60), K_NO_WAIT);
+	k_timer_start(&lte_mqtt_link_timer, K_SECONDS(30), K_NO_WAIT);
 }
 
 void LteMqttSendData(void)
@@ -299,7 +323,11 @@ void LteMqttSendData(void)
 	ret = get_data_from_cache(&mqtt_send_cache, &p_data, &data_len, &data_type);
 	if(ret)
 	{
-		LteSendData(p_data, data_len);
+		if(k_timer_remaining_get(&lte_mqtt_discon_timer) > 0)
+			k_timer_stop(&lte_mqtt_discon_timer);
+		k_timer_start(&lte_mqtt_discon_timer, K_SECONDS(CONFIG_MQTT_KEEPALIVE_TIME), K_NO_WAIT);
+		
+		lte_mqtt_publish(p_data, data_len);
 		delete_data_from_cache(&mqtt_send_cache);
 		k_timer_start(&lte_mqtt_send_timer, K_MSEC(50), K_NO_WAIT);
 	}
@@ -318,13 +346,27 @@ void MqttSendData(uint8_t *databuf, uint32_t len)
 	{
 		k_timer_start(&lte_net_link_timer, K_SECONDS(1), K_NO_WAIT);
 	}
-	else if(!mqtt_connected)
+	else if(mqtt_connected != LTE_MQTT_CONNECTED)
 	{
 		k_timer_start(&lte_mqtt_link_timer, K_SECONDS(1), K_NO_WAIT);
 	}
 	else
 	{
 		MqttSendDataStart();
+	}
+}
+
+void SetNwtWorkMqttBroker(uint8_t *imsi_buf)
+{
+	if(strncmp(imsi_buf, "460", strlen("460")) == 0)
+	{
+		strcpy(broker_hostname, CONFIG_MQTT_DOMESTIC_BROKER_HOSTNAME);
+		broker_port = CONFIG_MQTT_DOMESTIC_BROKER_PORT;
+	}
+	else
+	{
+		strcpy(broker_hostname, CONFIG_MQTT_FOREIGN_BROKER_HOSTNAME);
+		broker_port = CONFIG_MQTT_FOREIGN_BROKER_PORT;
 	}
 }
 
@@ -376,7 +418,7 @@ bool GetParaFromString(uint8_t *rece, uint32_t rece_len, uint8_t *cmd, uint8_t *
 	}
 }
 
-void ParseData(uint8_t *data, uint32_t datalen)
+void ParseServerDownloadData(uint8_t *data, uint32_t datalen)
 {
 	bool ret = false;
 	uint8_t strcmd[10] = {0};
@@ -700,7 +742,7 @@ void ParseData(uint8_t *data, uint32_t datalen)
 	}
 }
 
-void DecodeNetWorkDateTime(uint8_t *buffer, uint32_t len)
+void ParseNetWorkDateTime(uint8_t *buffer, uint32_t len)
 {
 	uint8_t tz_count,tz_dir[3] = {0};
 	uint8_t *ptr,strbuf[8] = {0};
@@ -781,17 +823,373 @@ void DecodeNetWorkDateTime(uint8_t *buffer, uint32_t len)
 #endif	
 }
 
-void SetNwtWorkMqttBroker(uint8_t *imsi_buf)
+void ParseRegisterStatusReport(uint8_t *data, uint32_t data_len)
 {
-	if(strncmp(imsi_buf, "460", strlen("460")) == 0)
+	//+CEREG:2,0000,00000000,9,,,,
+	//+CEREG: <stat>[,[<tac>],[<ci>],[<AcT>][,[<cause_type>],[<reject_cause>][,[<Active-Time>],[<Periodic-TAU>]]]]
+	uint8_t tmpbuf[256]={0},strbuf[8]={0};
+	uint8_t status,act,cause_type,reject_cause;
+	uint8_t tac[5]={0},ci[9]={0},act_time[9]={0},tau_time[9]={0};
+
+	if(data == NULL || data_len == 0)
+		return;
+	
+	memcpy(tmpbuf, data, data_len);
+	strcat(tmpbuf, ",");
+	
+	//status
+	GetStringInforBySepa(tmpbuf, ",", 1, strbuf);
+	status = atoi(strbuf);
+	
+	//tac
+	GetStringInforBySepa(tmpbuf, ",", 2, tac);
+#ifdef LTE_DEBUG
+	LOGD("tac:%s", tac);
+#endif	
+	
+	//ci
+	GetStringInforBySepa(tmpbuf, ",", 3, ci);
+#ifdef LTE_DEBUG
+	LOGD("ci:%s", ci);
+#endif
+
+	//act
+	memset(strbuf, 0, sizeof(strbuf));
+	GetStringInforBySepa(tmpbuf, ",", 4, strbuf);
+	act = atoi(strbuf);
+	switch(act)
 	{
-		strcpy(broker_hostname, CONFIG_MQTT_DOMESTIC_BROKER_HOSTNAME);
-		broker_port = CONFIG_MQTT_DOMESTIC_BROKER_PORT;
+	case 0:
+		//GSM (不适用)
+	#ifdef LTE_DEBUG
+		LOGD("GSM (not applicable)");
+	#endif	
+		break;
+	case 1:
+		//GSM Compact (不适用)
+	#ifdef LTE_DEBUG
+		LOGD("GSM Compact (not applicable)");
+	#endif	
+		break;
+	case 2:
+		//UTRAN (不适用)
+	#ifdef LTE_DEBUG
+		LOGD("UTRAN (not applicable)");
+	#endif	
+		break;
+	case 3:
+		//GSM w/EGPRS (不适用)
+	#ifdef LTE_DEBUG
+		LOGD("GSM w/EGPRS (not applicable)");
+	#endif	
+		break;
+	case 4:
+		//UTRAN w/HSDPA (不适用)
+	#ifdef LTE_DEBUG
+		LOGD("UTRAN w/HSDPA (not applicable)");
+	#endif	
+		break;
+	case 5:
+		//UTRAN w/HSUPA (不适用)
+	#ifdef LTE_DEBUG
+		LOGD("UTRAN w/HSUPA (not applicable)");
+	#endif	
+		break;
+	case 6:
+		//UTRAN w/HSDPA 和 HSUPA (不适用)
+	#ifdef LTE_DEBUG
+		LOGD("UTRAN w/HSDPA and HSUPA (not applicable)");
+	#endif	
+		break;
+	case 7:
+		//E-UTRAN (不适用)
+	#ifdef LTE_DEBUG
+		LOGD("E-UTRAN (not applicable)");
+	#endif	
+		break;
+	case 8:
+		//EC-GSM-IoT (A/Gb 模式) (不适用)
+	#ifdef LTE_DEBUG
+		LOGD("EC GSM IoT (A/Gb mode) (not applicable)");
+	#endif	
+		break;
+	case 9:
+		//E-UTRAN (NB-S1 模式) 
+	#ifdef LTE_DEBUG
+		LOGD("E-UTRAN (NB-S1 mode)");
+	#endif	
+		break;
 	}
-	else
+	
+	//cause_type
+	memset(strbuf, 0, sizeof(strbuf));
+	GetStringInforBySepa(tmpbuf, ",", 5, strbuf);
+#ifdef LTE_DEBUG
+	LOGD("cause_type:%s", strbuf);
+#endif	
+	if(strlen(strbuf) > 0)
 	{
-		strcpy(broker_hostname, CONFIG_MQTT_FOREIGN_BROKER_HOSTNAME);
-		broker_port = CONFIG_MQTT_FOREIGN_BROKER_PORT;
+		cause_type = atoi(strbuf);
+		switch(cause_type)
+		{
+		case 0:
+			//指示 <reject_cause> 包含一个 EMM 原因值
+		#ifdef LTE_DEBUG
+			LOGD("Indicate that<reject_cause>contains an EMM reason value");
+		#endif	
+			break;
+		case 1:
+			//指示 <reject_cause> 包含制造商特定的原因.
+		#ifdef LTE_DEBUG
+			LOGD("Indicate that<reject_cause>contains manufacturer specific reasons");
+		#endif	
+			break;
+		}
+	}
+	
+	//reject_cause
+	memset(strbuf, 0, sizeof(strbuf));
+	GetStringInforBySepa(tmpbuf, ",", 6, strbuf);
+#ifdef LTE_DEBUG
+	LOGD("reject_cause:%s", strbuf);
+#endif
+	if(strlen(strbuf) > 0)
+	{
+		reject_cause = atoi(strbuf);
+	}
+	
+	//Active-Time
+	GetStringInforBySepa(tmpbuf, ",", 7, act_time);
+#ifdef LTE_DEBUG
+	LOGD("act_time:%s", act_time);
+#endif
+
+	//Periodic-TAU
+	GetStringInforBySepa(tmpbuf, ",", 8, tau_time);
+#ifdef LTE_DEBUG
+	LOGD("tau_time:%s", tau_time);
+#endif
+
+	switch(status)
+	{
+	case 0:
+		//没有注册网络，MT 没有搜索新的网络
+	#ifdef LTE_DEBUG
+		LOGD("No registered network, MT did not search for new networks");
+	#endif	
+		break;
+	case 1:
+		//已注册到本地网络
+	#ifdef LTE_DEBUG
+		LOGD("Registered to local network");
+	#endif				
+		break;
+	case 2:
+		//没有注册网络，MT 正在搜索新的网络
+	#ifdef LTE_DEBUG
+		LOGD("No registered network, MT is searching for new networks");
+	#endif	
+		break;
+	case 3:
+		//注册被拒绝
+	#ifdef LTE_DEBUG
+		LOGD("Registration rejected");
+	#endif	
+		break;
+	case 4:
+		//未知(例如 超出 E-UTRAN 覆盖范围)
+	#ifdef LTE_DEBUG
+		LOGD("Unknown (e.g. beyond the coverage range of E-UTRAN)");
+	#endif	
+		break;
+	case 5:
+		//成功注册漫游网络
+	#ifdef LTE_DEBUG
+		LOGD("Successfully registered for roaming network");
+	#endif	
+		break;
+	case 6:
+		//已注册到"SMS only"网络(不适用)
+	#ifdef LTE_DEBUG
+		LOGD("Registered to the 'SMS only' network (not applicable)");
+	#endif	
+		break;
+	case 7:
+		//已注册到"SMS only"漫游网络(不适用)
+	#ifdef LTE_DEBUG
+		LOGD("Registered to the 'SMS only' roaming network (not applicable)");
+	#endif	
+		break;
+	case 8:
+		//仅附着到紧急呼叫服务(不适用)
+	#ifdef LTE_DEBUG
+		LOGD("Only attached to emergency call service (not applicable)");
+	#endif	
+		break;
+	case 9:
+		//已注册到"CSFB not preferred"网络(不适用)
+	#ifdef LTE_DEBUG
+		LOGD("Registered on the 'CSFB not preferred' network (not applicable)");
+	#endif	
+		break;
+	case 10:
+		//已注册到"CSFB not preferred"漫游网络(不适用)
+	#ifdef LTE_DEBUG
+		LOGD("Registered to the 'CSFB not preferred' roaming network (not applicable)");
+	#endif	
+		break;
+	}
+
+	if((status == 1) || (status == 5))
+	{
+		lte_relink_count = 0;
+		lte_connected = true;
+		k_timer_stop(&lte_net_link_timer);
+		k_timer_start(&lte_get_rsrp_timer, K_SECONDS(5), K_SECONDS(60));
+	}
+
+	if((status == 1) || (status == 5)		//Registered to network
+		|| (status == 6) || (status == 7)	//Registered to 'SMS only' network
+		|| (status == 8)					//Registered to emergency
+		|| (status == 9) || (status == 10)	//Registered to 'CSFB not preferred' network
+		)
+	{
+		//Get PDP IP
+		LteSendData(LTE_SNS521S_GET_IP, strlen(LTE_SNS521S_GET_IP));
+	}
+}
+
+void ParseMqttClientInitCallBack(uint8_t *data, uint32_t data_len)
+{
+	uint8_t *ptr1,*ptr2;
+
+	if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_KEEPALIVE)) != NULL)
+	{
+		//AT+ECMTCFG="keepalive",0,60
+		//OK
+		if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_KEEPALIVE);
+		#endif
+
+			lte_mqtt_client_set_session();
+		}
+		else
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_KEEPALIVE);
+		#endif
+		}
+	}
+	else if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_SESSION)) != NULL)
+	{
+		//AT+ECMTCFG="session",0,0
+		//OK
+		if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_SESSION);
+		#endif
+
+			lte_mqtt_client_set_timeout();
+		}
+		else
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_SESSION);
+		#endif
+		}
+	}
+	else if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_TIMEOUT)) != NULL)
+	{
+		//AT+ECMTCFG="timeout",0,10,3,1
+		//OK
+		if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_TIMEOUT);
+		#endif
+
+			lte_mqtt_client_set_version();
+		}
+		else
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_TIMEOUT);
+		#endif
+		}
+	}
+	else if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_WILL)) != NULL)
+	{
+		if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_WILL);
+		#endif
+
+			//lte_mqtt_client_set_version();
+		}
+		else
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_WILL);
+		#endif
+		}
+	}
+	else if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_VERSION)) != NULL)
+	{
+		//AT+ECMTCFG="version",0,4
+		//OK
+		if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_VERSION);
+		#endif
+
+			lte_mqtt_client_set_cloud();
+		}
+		else
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_VERSION);
+		#endif
+		}
+	}
+	else if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_ALIAUTH)) != NULL)
+	{
+		//
+		if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_ALIAUTH);
+		#endif	
+		}
+		else
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_ALIAUTH);
+		#endif
+		}
+	}
+	else if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_CLOUD)) != NULL)
+	{
+		//AT+ECMTCFG="cloud",0,0,2
+		//OK
+		if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_CLOUD);
+		#endif
+
+			lte_mqtt_open();
+		}
+		else
+		{
+		#ifdef LTE_DEBUG
+			LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_CLOUD);
+		#endif
+		}
 	}
 }
 
@@ -812,7 +1210,16 @@ void lte_receive_data_handle(uint8_t *data, uint32_t data_len)
 
 		lte_net_link();
 	}
-
+	
+	if((ptr1 = strstr(data, LTE_SNS521S_RECE_CEREG)) != NULL)
+	{
+		ptr1 += strlen(LTE_SNS521S_RECE_CEREG);
+		if((ptr2 = strstr(ptr1, "\r\n")) != NULL)
+		{
+			ParseRegisterStatusReport(ptr1, (ptr2-ptr1));
+		}
+	}
+	
 	if((ptr1 = strstr(data, LTE_SNS521S_RECE_IP)) != NULL)
 	{
 		ptr1 += strlen(LTE_SNS521S_RECE_IP);
@@ -828,7 +1235,7 @@ void lte_receive_data_handle(uint8_t *data, uint32_t data_len)
 			//				a1.a2.a3.a4 表示 IPv4
 			//				a1.a2.a3.a4.a5.a6 表示 IPv6.
 			uint8_t strbuf[128] = {0};
-			
+
 			memset(tmpbuf, 0, sizeof(tmpbuf));
 			memcpy(tmpbuf, ptr1, ptr2-ptr1);
 			strcat(tmpbuf, ",");
@@ -836,22 +1243,12 @@ void lte_receive_data_handle(uint8_t *data, uint32_t data_len)
 			if(strlen(strbuf) > 0)
 			{
 			#ifdef LTE_DEBUG
-				LOGD("register to network! %s", tmpbuf);
-			#endif
-
-				lte_relink_count = 0;
-				lte_connected = true;
-				k_timer_stop(&lte_net_link_timer);
-
-				lte_get_net_time();
-				k_timer_start(&lte_get_rsrp_timer, K_SECONDS(1), K_SECONDS(60));
-
-				lte_mqtt_link();
+				LOGD("IP:%s", tmpbuf);
+			#endif	
 			}
-			else
-			{
-				k_timer_start(&lte_get_ip_timer, K_SECONDS(1), K_NO_WAIT);
-			}
+
+			lte_get_net_time();
+			lte_mqtt_link();
 		}
 	}
 
@@ -979,6 +1376,28 @@ void lte_receive_data_handle(uint8_t *data, uint32_t data_len)
 		}
 	}
 
+	if((ptr1 = strstr(data, LTE_SNS521S_RECE_CSCON)) != NULL)
+	{	
+		//+CSCON:<mode>
+		//<mode> 整型; 指示信号连接状态, 0:空闲 1:已连接
+		ptr1 += strlen(LTE_SNS521S_RECE_CSCON);
+		ptr2 = strstr(ptr1, "\r\n");
+		if(ptr2 != NULL)
+		{
+			uint8_t mode;
+			uint8_t strbuf[8] = {0};
+
+			memset(tmpbuf, 0, sizeof(tmpbuf));
+			memcpy(tmpbuf, ptr1, ptr2-ptr1);
+			strcat(tmpbuf, ",");
+			GetStringInforBySepa(tmpbuf, ",", 1, strbuf);
+			mode = atoi(strbuf);
+		#ifdef LTE_DEBUG
+			LOGD("CSCON:%d", mode);
+		#endif
+		}
+	}
+	
 	if((ptr1 = strstr(data, LTE_SNS521S_RECE_CCLK)) != NULL)
 	{	
 		//+CCLK:24/10/30,09:22:10+32
@@ -991,135 +1410,20 @@ void lte_receive_data_handle(uint8_t *data, uint32_t data_len)
 		#ifdef LTE_DEBUG
 			LOGD("CCLK:%s", tmpbuf);
 		#endif			
-			DecodeNetWorkDateTime(tmpbuf, ptr2-ptr1);
+			ParseNetWorkDateTime(tmpbuf, ptr2-ptr1);
 		}
 	}
 
 	if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CILENT)) != NULL)
 	{
-		//+ECMTOPEN:<tcpconnectID>,<result>
-		if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_KEEPALIVE)) != NULL)
-		{
-			if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_KEEPALIVE);
-			#endif
-
-				lte_mqtt_client_set_session();
-			}
-			else
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_KEEPALIVE);
-			#endif
-			}
-		}
-		else if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_SESSION)) != NULL)
-		{
-			if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_SESSION);
-			#endif
-
-				lte_mqtt_client_set_timeout();
-			}
-			else
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_SESSION);
-			#endif
-			}
-		}
-		else if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_TIMEOUT)) != NULL)
-		{
-			if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_TIMEOUT);
-			#endif
-
-				lte_mqtt_client_set_version();
-			}
-			else
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_TIMEOUT);
-			#endif
-			}
-		}
-		else if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_WILL)) != NULL)
-		{
-			if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_WILL);
-			#endif
-
-				//lte_mqtt_client_set_version();
-			}
-			else
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_WILL);
-			#endif
-			}
-		}
-		else if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_VERSION)) != NULL)
-		{
-			if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_VERSION);
-			#endif
-
-				lte_mqtt_client_set_cloud();
-			}
-			else
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_VERSION);
-			#endif
-			}
-		}
-		else if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_ALIAUTH)) != NULL)
-		{
-			if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_ALIAUTH);
-			#endif	
-			}
-			else
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_ALIAUTH);
-			#endif
-			}
-		}
-		else if((ptr1 = strstr(data, LTE_SNS521S_SET_MQTT_CLIENT_CLOUD)) != NULL)
-		{
-			if((ptr2 = strstr(data, LTE_SNS521S_RECE_OK)) != NULL)
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s sucsuccess!", LTE_SNS521S_SET_MQTT_CLIENT_CLOUD);
-			#endif
-
-				lte_mqtt_open();
-			}
-			else
-			{
-			#ifdef LTE_DEBUG
-				LOGD("mqtt cfg %s fail!", LTE_SNS521S_SET_MQTT_CLIENT_CLOUD);
-			#endif
-			}
-		}
+		ParseMqttClientInitCallBack(ptr1, data_len-(ptr1-data));
 	}
 
 	if((ptr1 = strstr(data, LTE_SNS521S_RECE_MQTT_OPEN)) != NULL)
 	{
 		//+ECMTOPEN:<tcpconnectID>,<result>
+		//<tcpconnectID> 整型；MQTT 套接字标识符。值是 0
+		//<result> 整型，命令执行结果。-1：打开网络失败。0：打开网络成功。
 		ptr1 += strlen(LTE_SNS521S_RECE_MQTT_OPEN);
 		ptr2 = strstr(ptr1, "\r\n");
 		if(ptr2 != NULL)
@@ -1140,7 +1444,46 @@ void lte_receive_data_handle(uint8_t *data, uint32_t data_len)
 			#ifdef LTE_DEBUG
 				LOGD("mqtt open success!");
 			#endif
+
+				mqtt_connected = LTE_MQTT_OPENED;
 				lte_mqtt_connect();
+			}
+			else
+			{
+				lte_mqtt_close();
+				lte_mqtt_open();
+			}
+		}
+	}
+	
+	if((ptr1 = strstr(data, LTE_SNS521S_RECE_MQTT_CLOSE)) != NULL)
+	{
+		//+ECMTCLOSE: <tcpconnectID>,<result>
+		//<tcpconnectID> 整型；MQTT 套接字标识符。值是 0。
+		//<result> 整型，命令执行结果。-1：关闭 mqtt 失败。0：关闭 mqtt 成功。
+		//<err> 整型；错误码
+		ptr1 += strlen(LTE_SNS521S_RECE_MQTT_CLOSE);
+		ptr2 = strstr(ptr1, "\r\n");
+		if(ptr2 != NULL)
+		{
+			int ret;
+			uint8_t strbuf[8] = {0};
+			
+			memset(tmpbuf, 0, sizeof(tmpbuf));
+			memcpy(tmpbuf, ptr1, ptr2-ptr1);
+		#ifdef LTE_DEBUG
+			LOGD("mqtt close:%s", tmpbuf);
+		#endif			
+			strcat(tmpbuf, ",");
+			GetStringInforBySepa(tmpbuf, ",", 2, strbuf);
+			ret = atoi(strbuf);
+			if(ret == 0)
+			{
+			#ifdef LTE_DEBUG
+				LOGD("mqtt close success!");
+			#endif
+
+				mqtt_connected = LTE_MQTT_CLOSED;
 			}
 		}
 	}
@@ -1168,6 +1511,11 @@ void lte_receive_data_handle(uint8_t *data, uint32_t data_len)
 			#ifdef LTE_DEBUG
 				LOGD("mqtt connect success!");
 			#endif
+			
+				mqtt_relink_count = 0;
+				mqtt_connected = LTE_MQTT_CONNECTED;
+				k_timer_stop(&lte_mqtt_link_timer);
+				
 				lte_mqtt_subscribe();
 			}
 
@@ -1208,6 +1556,38 @@ void lte_receive_data_handle(uint8_t *data, uint32_t data_len)
 		}
 	}
 
+	if((ptr1 = strstr(data, LTE_SNS521S_RECE_MQTT_DISCON)) != NULL)
+	{
+		//+ECMTDISC: <tcpconnectID>,<result>
+		//<tcpconnectID> 整型；MQTT 套接字标识符。值是 0。
+		//<result> 整型，命令执行结果。-1：断开连接失败。0：断开连接成功。
+		//<err> 整型；错误码
+		ptr1 += strlen(LTE_SNS521S_RECE_MQTT_DISCON);
+		ptr2 = strstr(ptr1, "\r\n");
+		if(ptr2 != NULL)
+		{
+			int ret;
+			uint8_t strbuf[8] = {0};
+			
+			memset(tmpbuf, 0, sizeof(tmpbuf));
+			memcpy(tmpbuf, ptr1, ptr2-ptr1);
+		#ifdef LTE_DEBUG
+			LOGD("mqtt disconnect:%s", tmpbuf);
+		#endif			
+			strcat(tmpbuf, ",");
+			GetStringInforBySepa(tmpbuf, ",", 2, strbuf);
+			ret = atoi(strbuf);
+			if(ret == 0)
+			{
+			#ifdef LTE_DEBUG
+				LOGD("mqtt disconnect success!");
+			#endif
+
+				mqtt_connected = LTE_MQTT_OPENED;
+			}
+		}
+	}
+	
 	if((ptr1 = strstr(data, LTE_SNS521S_RECE_MQTT_SUB)) != NULL)
 	{
 		//+ECMTSUB:<tcpconnectID>,<msgID>,<result>[,<value>]
@@ -1232,10 +1612,6 @@ void lte_receive_data_handle(uint8_t *data, uint32_t data_len)
 				LOGD("mqtt subscribe success!");
 			#endif
 
-				mqtt_relink_count = 0;
-				mqtt_connected = true;
-				k_timer_stop(&lte_mqtt_link_timer);
-
 				if(power_on_data_flag)
 				{
 					power_on_data_flag = false;
@@ -1247,14 +1623,48 @@ void lte_receive_data_handle(uint8_t *data, uint32_t data_len)
 			}
 		}
 	}
+
+	if((ptr1 = strstr(data, LTE_SNS521S_RECE_MQTT_PUB)) != NULL)
+	{
+		//+ECMTPUB: <tcpconnectID>,<msgID>,<result>[,<value>]
+		//<tcpconnectID> 整型；MQTT 套接字标识符。值是 0。
+		//<msgID> 整型；报文的报文标识。 范围是 0-65535。 仅当<qos> = 0 时它将为 0。
+		//<result> 整型。0：发送成功，并收到 server 回复。1：发送成功，但接收到的回复错误。2：发送失败。
+		//<value> 整型。服务器授予的 qos 等级。
+		ptr1 += strlen(LTE_SNS521S_RECE_MQTT_PUB);
+		ptr2 = strstr(ptr1, "\r\n");
+		if(ptr2 != NULL)
+		{
+			int ret;
+			uint8_t strbuf[8] = {0};
+			
+			memset(tmpbuf, 0, sizeof(tmpbuf));
+			memcpy(tmpbuf, ptr1, ptr2-ptr1);
+		#ifdef LTE_DEBUG
+			LOGD("mqtt publish:%s", tmpbuf);
+		#endif			
+			strcat(tmpbuf, ",");
+			GetStringInforBySepa(tmpbuf, ",", 3, strbuf);
+			ret = atoi(strbuf);
+			if(ret == 0 || ret == 1)
+			{
+			#ifdef LTE_DEBUG
+				LOGD("mqtt publish success!");
+			#endif
+			}
+		}
+	}
 	
 	if((ptr1 = strstr(data, LTE_SNS521S_RECE_MQTT_STAT)) != NULL)
 	{
 		//+ECMTSTAT: <tcpconnectID>,<err_code>
+		//<tcpconnectID> 整型；MQTT 套接字标识符。值是 0。
+		//<err_code> 整型。错误代码。1：连接已关闭或由对等方重置。
 		ptr1 += strlen(LTE_SNS521S_RECE_MQTT_STAT);
 		ptr2 = strstr(ptr1, "\r\n");
 		if(ptr2 != NULL)
 		{
+			int ret;
 			uint8_t strbuf[8] = {0};
 			
 			memset(tmpbuf, 0, sizeof(tmpbuf));
@@ -1264,10 +1674,14 @@ void lte_receive_data_handle(uint8_t *data, uint32_t data_len)
 		#endif			
 			strcat(tmpbuf, ",");
 			GetStringInforBySepa(tmpbuf, ",", 2, strbuf);
-			mqtt_connected = atoi(strbuf);
+			ret = atoi(strbuf);
 		#ifdef LTE_DEBUG
-			LOGD("mqtt_connected:%d", mqtt_connected);
+			LOGD("ret:%d", ret);
 		#endif
+			if(ret == 1)
+			{
+				mqtt_connected = LTE_MQTT_OPENED;
+			}
 		}
 	}
 
@@ -1292,7 +1706,7 @@ void lte_receive_data_handle(uint8_t *data, uint32_t data_len)
 		ptr2 = strstr(ptr1, "\r\n");
 		if(ptr2 != NULL)
 		{
-			ParseData(ptr1, ptr2-ptr1);
+			ParseServerDownloadData(ptr1, ptr2-ptr1);
 		}
 	}
 }
@@ -1540,11 +1954,23 @@ void lte_ue_reboot(void)
 	LteSendData(LTE_SNS521S_SET_REBOOT, strlen(LTE_SNS521S_SET_REBOOT));
 }
 
+void lte_set_cfg(void)
+{
+	//Disable lwm2m protocol
+	LteSendData(LTE_SNS521S_SET_LWM2M_DISABLE, strlen(LTE_SNS521S_SET_LWM2M_DISABLE));
+	//Set register mode
+	LteSendData(LTE_SNS521S_SET_REGISTER_MODE, strlen(LTE_SNS521S_SET_REGISTER_MODE));
+	//Set power save mode
+	LteSendData(LTE_SNS521S_SET_PMU_CFG, strlen(LTE_SNS521S_SET_PMU_CFG));
+}
+
 void lte_get_infor(void)
 {
 #ifdef LTE_DEBUG
 	LOGD("begin");
 #endif
+
+	lte_set_cfg();
 
 	//Turn of cmd reshow
 	LteSendData(LTE_SNS521S_SET_CMD_RESHOW_ON, strlen(LTE_SNS521S_SET_CMD_RESHOW_ON));
@@ -2110,15 +2536,21 @@ void lte_net_link(void)
 #ifdef LTE_DEBUG
 	LOGD("begin");
 #endif	
-	
+
+	//Turn of cmd reshow
+	LteSendData(LTE_SNS521S_SET_CMD_RESHOW_ON, strlen(LTE_SNS521S_SET_CMD_RESHOW_ON));
+	//Turn on register report
+	LteSendData(LTE_SNS521S_SET_EREG_REPORT, strlen(LTE_SNS521S_SET_EREG_REPORT));
+	//Turn on connect report
+	LteSendData(LTE_SNS521S_SET_CON_REPORT, strlen(LTE_SNS521S_SET_CON_REPORT));
+	//Turn on psm report
+	LteSendData(LTE_SNS521S_SET_PSM_REPORT, strlen(LTE_SNS521S_SET_PSM_REPORT));
 	//Turn on error report
 	LteSendData(LTE_SNS521S_SET_ERR_REPORT, strlen(LTE_SNS521S_SET_ERR_REPORT));
 	//Turn on RF
 	LteSendData(LTE_SNS521S_SET_FUN_FULL, strlen(LTE_SNS521S_SET_FUN_FULL));
 	//Attach request
 	LteSendData(LTE_SNS521S_SET_ATTACH_NETWAOK, strlen(LTE_SNS521S_SET_ATTACH_NETWAOK));
-	//Get PDP IP
-	LteSendData(LTE_SNS521S_GET_IP, strlen(LTE_SNS521S_GET_IP));
 	
 	k_timer_start(&lte_net_link_timer, K_SECONDS(2*60), K_NO_WAIT);
 }
@@ -2157,8 +2589,6 @@ void LteMsgProcess(void)
 
 	if(lte_net_link_flag)
 	{
-		k_timer_stop(&lte_get_ip_timer);
-		
 		lte_net_clear_search();
 		lte_relink_count++;
 		if(lte_relink_count < LTE_NET_RELINK_MAX)
@@ -2172,6 +2602,21 @@ void LteMsgProcess(void)
 		lte_net_link_flag = false;
 	}
 
+	if(lte_mqtt_discon_flag)
+	{
+		if(LteSendCacheIsEmpty())
+		{
+			lte_mqtt_disconnect();
+			lte_mqtt_close();
+		}
+		else
+		{
+			k_timer_start(&lte_mqtt_discon_timer, K_SECONDS(10), K_NO_WAIT);
+		}
+
+		lte_mqtt_discon_flag = false;
+	}
+	
 	if(lte_mqtt_link_flag)
 	{
 		mqtt_relink_count++;
