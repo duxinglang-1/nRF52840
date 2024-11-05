@@ -84,6 +84,10 @@ config APPLICATION_WORKQUEUE_PRIORITY
 	int "Application workqueue priority"
 	default SYSTEM_WORKQUEUE_PRIORITY
 	
+config MQTT_KEEPALIVE_TIME
+	int "MQTT keepalive"
+	default 60
+		
 config MQTT_LOG_PUB_TOPIC
 	string "MQTT log publish topic"
 	default "device/e2/pushlog"
