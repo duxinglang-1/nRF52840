@@ -239,6 +239,14 @@ void UartLteSendDataStart(void)
 	k_timer_start(&uart_lte_send_data_timer, K_MSEC(50), K_NO_WAIT);
 }
 
+bool LteSendCacheIsEmpty(void)
+{
+	if(cache_is_empty(&uart_lte_send_cache))
+		return true;
+	else
+		return false;
+}
+
 void LteSendData(uint8_t *data, uint32_t datalen)
 {
 	int ret;
@@ -265,6 +273,14 @@ void UartLteReceData(void)
 void LteReceDataStart(void)
 {
 	k_timer_start(&uart_lte_rece_data_timer, K_MSEC(50), K_NO_WAIT);
+}
+
+bool LteReceCacheIsEmpty(void)
+{
+	if(cache_is_empty(&uart_lte_rece_cache))
+		return true;
+	else
+		return false;
 }
 
 void LteReceData(uint8_t *data, uint32_t datalen)
@@ -351,6 +367,14 @@ void UartGpsSendDataStart(void)
 	k_timer_start(&uart_gps_send_data_timer, K_MSEC(50), K_NO_WAIT);
 }
 
+bool GpsSendCacheIsEmpty(void)
+{
+	if(cache_is_empty(&uart_gps_send_cache))
+		return true;
+	else
+		return false;
+}
+
 void GpsSendData(uint8_t *data, uint32_t datalen)
 {
 	int ret;
@@ -377,6 +401,14 @@ void UartGpsReceData(void)
 void GpsReceDataStart(void)
 {
 	k_timer_start(&uart_gps_rece_data_timer, K_MSEC(50), K_NO_WAIT);
+}
+
+bool GpsReceCacheIsEmpty(void)
+{
+	if(cache_is_empty(&uart_gps_rece_cache))
+		return true;
+	else
+		return false;
 }
 
 void GpsReceData(uint8_t *data, uint32_t datalen)
